@@ -1,6 +1,4 @@
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { USER_DETAILS } from "../json/index";
@@ -11,6 +9,7 @@ import { RxSun } from "react-icons/rx";
 import { RxMoon } from "react-icons/rx";
 import { useAtom } from "jotai";
 import { themeAtom } from "../store";
+import { AppBar } from "@mui/material";
 
 const navItems = ["About", "Experience", "Projects", "Contact"];
 
@@ -24,60 +23,77 @@ const Header = () => {
     setTheme((p) => (p === "dark" ? "light" : "dark"));
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="static"
-        className="h-[12dvh] flex justify-center shadow-none"
-      >
-        <Toolbar>
-          <Typography
-            variant="h4"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            className="first-letter:capitalize"
-          >
-            {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
-          </Typography>
-          {navItems.map((e) => (
+    <>
+      <AppBar className="shadow-none">
+        <Box className="min-h-16 h-[12dvh] flex justify-between mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography
+              variant="h4"
+              component="div"
+              sx={{ flexGrow: 1 }}
+              className="first-letter:capitalize"
+            >
+              {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
+            </Typography>
+          </Box>
+
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            {navItems.map((e) => (
+              <>
+                <Box className="flex flex-col group mx-2">
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+                  >
+                    {e}
+                  </Typography>
+                  <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                </Box>
+              </>
+            ))}
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1 }}
-              className="first-letter:capitalize hidden lg:flex cursor-pointer"
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              {e}
+              {theme === "dark" && (
+                <RxSun
+                  fontSize={36}
+                  className="mx-2 "
+                  onClick={handleToggleTheme}
+                />
+              )}
+
+              {theme === "light" && (
+                <RxMoon
+                  fontSize={36}
+                  className="mx-2 "
+                  onClick={handleToggleTheme}
+                />
+              )}
             </Typography>
-          ))}
 
-          {theme === "dark" && (
-            <RxSun
+            <RxHamburgerMenu
               fontSize={36}
               className="mx-2 lg:hidden"
-              onClick={handleToggleTheme}
+              onClick={handleToggleSidebar}
             />
-          )}
-
-          {theme === "light" && (
-            <RxMoon
-              fontSize={36}
-              className="mx-2 lg:hidden"
-              onClick={handleToggleTheme}
-            />
-          )}
-
-          <RxHamburgerMenu
-            fontSize={36}
-            className="mx-2 lg:hidden"
-            onClick={handleToggleSidebar}
-          />
-        </Toolbar>
+          </Box>
+        </Box>
       </AppBar>
+
       <Sidebar
         drawerState={toggle}
         navItemsList={navItems}
         onToggle={handleToggleSidebar}
       />
-    </Box>
+    </>
   );
 };
 
