@@ -7,7 +7,7 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#ffffff", // Black for primary elements
+      main: "#000", // Black for primary elements
     },
     secondary: {
       main: "#ffffff", // White for secondary elements
@@ -17,10 +17,27 @@ export const lightTheme = createTheme({
       paper: "#f5f5f5", // Light grey for paper components
     },
     text: {
-      primary: "#000000", // Black text
+      primary: "#000", // Black text
       secondary: "#555555", // Dark grey text
     },
     divider: "#e0e0e0", // Light grey dividers
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#ffffff", // Set the AppBar background color to white
+          color: "#000000", // Set the AppBar text color to black
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "#000000", // Default text color
+        },
+      },
+    },
   },
 });
 
@@ -34,10 +51,10 @@ export const darkTheme = createTheme({
       main: "#ffffff", // White for primary elements
     },
     secondary: {
-      main: "#000000", // Black for secondary elements
+      main: "#1c1c1c ", // Black for secondary elements
     },
     background: {
-      default: "#000000", // Black background
+      default: "#1c1c1c ", // Black background
       paper: "#1c1c1c", // Dark grey for paper components
     },
     text: {
@@ -45,5 +62,22 @@ export const darkTheme = createTheme({
       secondary: "#aaaaaa", // Light grey text
     },
     divider: "#333333", // Dark grey dividers
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#1c1c1c", // Set the AppBar background color to white
+          color: "#fff", // Set the AppBar text color to black
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "#fff", // Default text color
+        },
+      },
+    },
   },
 });

@@ -19,10 +19,6 @@ body {
   min-height: 100vh;
 }
 
-.main-app {
-  height: 100vh;
-}
-
 svg {
   cursor: pointer;
 }

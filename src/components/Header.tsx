@@ -24,36 +24,40 @@ const Header = () => {
 
   return (
     <>
-      <AppBar className="shadow-none">
-        <Box className="min-h-16 h-[12dvh] flex justify-between mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
+      <AppBar className="shadow-none bg-none">
+        <Box className="min-h-[64px] h-[120px] flex justify-between mx-2 md:mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography
-              variant="h4"
               component="div"
               sx={{ flexGrow: 1 }}
-              className="first-letter:capitalize"
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl"
             >
               {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
             {navItems.map((e) => (
               <>
-                <Box className="flex flex-col group mx-2">
+                <Box className="hidden lg:flex flex-col group mx-6">
                   <Typography
-                    variant="h6"
+                    variant="h5"
                     component="div"
                     className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
                   >
                     {e}
                   </Typography>
-                  <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                  <Box className="h-[2px] hidden lg:block w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
                 </Box>
               </>
             ))}
             <Typography
-              variant="h6"
+              variant="h5"
               component="div"
               sx={{
                 flexGrow: 1,

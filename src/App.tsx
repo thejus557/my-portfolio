@@ -4,35 +4,48 @@ import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { darkTheme, lightTheme } from "./theme";
 import { useAtomValue } from "jotai";
 import { themeAtom } from "./store";
+import Intro from "./pages/Intro";
+import About from "./pages/About";
+
+import Experience from "./pages/Experience";
+import { useSetAtom } from "jotai/react";
 
 const App = () => {
   // const [theme, setTheme] = useState<"dark" | "light">("light");
 
   const theme = useAtomValue(themeAtom);
+  const setTheme = useSetAtom(themeAtom);
 
-  console.log(theme);
   useEffect(() => {
-    // if (
-    //   localStorage.theme === "dark" ||
-    //   (!("theme" in localStorage) &&
-    //     window.matchMedia("(prefers-color-scheme: dark)").matches)
-    // ) {
-    //   setTheme("dark");
-    // } else {
-    //   setTheme("light");
-    // }
+    document.body.style.backgroundColor = theme === "dark" ? "#1c1c1c" : "#fff";
+  }, [theme]);
+
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setTheme("dark");
+      document.body.style.backgroundColor = "#1c1c1c";
+    } else {
+      setTheme("light");
+      document.body.style.backgroundColor = "#fff";
+    }
   }, []);
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
-        <div className={`main-app ${theme}`}>
+        <Header />
+        <div className={`main-app ${theme} pt-[120px]`}>
           <div
             className={`h-full ${
-              theme === "dark" ? "dark:bg-black" : "bg-white"
+              theme === "dark" ? "dark:bg-[#1c1c1c]" : "bg-white"
             }`}
           >
-            <Header />
+            <Intro />
+            <About />
           </div>
         </div>
       </ThemeProvider>
