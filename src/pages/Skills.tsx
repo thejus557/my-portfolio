@@ -18,6 +18,8 @@ import VueJSIcon from "../assets/skills/icons8-vuejs-240.png";
 import RxjsIcon from "../assets/skills/images.jpeg";
 import NGRXIcon from "../assets/skills/ngrx.svg";
 import VuexIcon from "../assets/skills/vuex-1.svg";
+import GitIcon from "../assets/skills/icons8-git-480.png";
+import NxIcon from "../assets/skills/nx-logo.png";
 
 const skillsJson = [
   {
@@ -101,10 +103,19 @@ const skillsJson = [
     icon: FirebaseIcon,
     experience: "2",
   },
-
   {
     name: "MongoDB",
     icon: MongoDBIcon,
+    experience: "2",
+  },
+  {
+    name: "Git",
+    icon: GitIcon,
+    experience: "2",
+  },
+  {
+    name: "Nx Monorepo",
+    icon: NxIcon,
     experience: "2",
   },
 ];
