@@ -2,15 +2,10 @@ import { Box, Button, Typography } from "@mui/material";
 import { USER_DETAILS } from "../json";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import ProfilePicDark from "../assets/profile-pic-dark.png";
-import ProfilePicLight from "../assets/profile-pic-light.png";
-import { useAtomValue } from "jotai";
-import { themeAtom } from "../store";
+import ProfilePic from "../assets/profile-pic 8.png";
 import { Typewriter } from "react-simple-typewriter";
 
 const Intro = () => {
-  const theme = useAtomValue(themeAtom);
-
   const handleGithubClick = () => {
     window.open("https://github.com/thejus557");
   };
@@ -26,7 +21,7 @@ const Intro = () => {
     >
       <Box className="flex flex-col">
         <img
-          src={theme === "light" ? ProfilePicDark : ProfilePicLight}
+          src={ProfilePic}
           className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px]"
         />
       </Box>
