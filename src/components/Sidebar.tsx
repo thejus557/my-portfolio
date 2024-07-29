@@ -47,7 +47,7 @@ const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
         }}
       >
         {navItemsList.map((e) => (
-          <Box className="flex-col group mx-6">
+          <Box className="group mx-6 flex flex-col justify-center items-center">
             <Typography
               variant="h5"
               component="div"

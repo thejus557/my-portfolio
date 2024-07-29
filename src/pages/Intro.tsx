@@ -11,8 +11,16 @@ import { themeAtom } from "../store";
 const Intro = () => {
   const theme = useAtomValue(themeAtom);
 
+  const handleGithubClick = () => {
+    window.open("https://github.com/thejus557");
+  };
+
+  const handleLinkedInClick = () => {
+    window.open("https://in.linkedin.com/in/suryateja-k-1825b8151");
+  };
+
   return (
-    <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  h-[calc(100dvh-120px)]">
+    <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]">
       <Box className="flex flex-col">
         <img
           src={theme === "light" ? ProfilePicDark : ProfilePicLight}
@@ -73,11 +81,15 @@ const Intro = () => {
           </Button>
         </Box>
         <Box className="flex gap-4 justify-center mt-4">
-          <Typography variant="h5" component="div">
-            <FaLinkedin fontSize={"24"} />
-          </Typography>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" component="div" onClick={handleGithubClick}>
             <FaGithub fontSize={"24"} />
+          </Typography>
+          <Typography
+            variant="h5"
+            component="div"
+            onClick={handleLinkedInClick}
+          >
+            <FaLinkedin fontSize={"24"} />
           </Typography>
         </Box>
       </Box>

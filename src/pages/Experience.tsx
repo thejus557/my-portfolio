@@ -4,9 +4,8 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import { Box, Card, CardContent, Typography } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
+import { Box, Typography } from "@mui/material";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 
 const experienceJson = [
   {
@@ -80,11 +79,8 @@ const experienceJson = [
 ];
 
 const Experience = () => {
-  const matches = useMediaQuery("(min-width:425px)");
-
-  console.log("matches", matches);
   return (
-    <Box className="mb-4 h-[calc(100dvh-120px)] flex flex-col">
+    <Box className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col">
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}
@@ -102,45 +98,54 @@ const Experience = () => {
         Experience
       </Typography>
 
-      <Timeline
+      <Box
         sx={{
-          [`& .${timelineOppositeContentClasses.root}`]: {
-            flex: 0.1,
-          },
+          border: "1px solid",
+          borderColor: "text.secondary",
+          borderRadius: "1rem",
+          padding: "1rem",
+          margin: "0 auto",
         }}
-        position="alternate"
       >
-        {experienceJson.map((exp) => (
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot variant="outlined" />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              <Typography variant="h6" component="div" gutterBottom>
-                {exp.company}
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                {exp.location}
-              </Typography>
-              {exp.positions.map((position, posIndex) => (
-                <div key={posIndex}>
-                  <Typography variant="subtitle1" component="div" gutterBottom>
-                    {position.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    fontSize={10}
-                  >
-                    {position.dates} ({position.duration})
-                  </Typography>
-                </div>
-              ))}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+        <Timeline>
+          {experienceJson.map((exp) => (
+            <TimelineItem>
+              <TimelineOppositeContent color="text.secondary">
+                <Typography variant="body1" component="div" gutterBottom>
+                  {exp.company}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" fontSize={12}>
+                  {exp.location}
+                </Typography>
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineDot variant="outlined" />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                {exp.positions.map((position, posIndex) => (
+                  <div key={posIndex}>
+                    <Typography
+                      variant="subtitle1"
+                      component="div"
+                      gutterBottom
+                    >
+                      {position.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      fontSize={10}
+                    >
+                      {position.dates} ({position.duration})
+                    </Typography>
+                  </div>
+                ))}
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </Box>
     </Box>
   );
 };

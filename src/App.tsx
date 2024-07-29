@@ -10,6 +10,8 @@ import Intro from "./pages/Intro";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   const theme = useAtomValue(themeAtom);
@@ -47,8 +49,10 @@ const App = () => {
             <About />
             <Skills />
             <Experience />
+            <Contact />
           </div>
         </div>
+        <Footer />
       </ThemeProvider>
     </StyledEngineProvider>
   );
