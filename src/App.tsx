@@ -12,8 +12,6 @@ import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
 
 const App = () => {
-  // const [theme, setTheme] = useState<"dark" | "light">("light");
-
   const theme = useAtomValue(themeAtom);
   const setTheme = useSetAtom(themeAtom);
 
@@ -48,6 +46,7 @@ const App = () => {
             <Intro />
             <About />
             <Skills />
+            <Experience />
           </div>
         </div>
       </ThemeProvider>
