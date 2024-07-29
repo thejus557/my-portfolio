@@ -122,7 +122,10 @@ const skillsJson = [
 
 const Skills = () => {
   return (
-    <Box className="flex flex-col justify-center items-center mb-4 min-h-[calc(100dvh-120px)]">
+    <Box
+      id="skills"
+      className="flex flex-col justify-center items-center mb-4 min-h-[calc(100dvh-120px)]"
+    >
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}

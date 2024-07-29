@@ -22,9 +22,18 @@ const Header = () => {
   const handleToggleTheme = () =>
     setTheme((p) => (p === "dark" ? "light" : "dark"));
 
+  const handleItemClick = (e: string) => {
+    const element = document.getElementById(e.toLowerCase());
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     <>
-      <AppBar className="shadow-none bg-none">
+      <AppBar className="shadow-none bg-none relative">
         <Box className="min-h-[64px] h-[120px] flex justify-between mx-2 md:mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography
@@ -49,6 +58,7 @@ const Header = () => {
                     variant="h5"
                     component="div"
                     className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+                    onClick={() => handleItemClick(e)}
                   >
                     {e}
                   </Typography>

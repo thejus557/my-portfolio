@@ -80,7 +80,10 @@ const experienceJson = [
 
 const Experience = () => {
   return (
-    <Box className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center">
+    <Box
+      id="experience"
+      className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
+    >
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}

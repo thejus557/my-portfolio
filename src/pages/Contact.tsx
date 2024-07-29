@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io5";
@@ -17,7 +17,10 @@ const Experience = () => {
   };
 
   return (
-    <Box className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center">
+    <Box
+      id="contact"
+      className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
+    >
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}

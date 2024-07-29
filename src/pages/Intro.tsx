@@ -20,7 +20,10 @@ const Intro = () => {
   };
 
   return (
-    <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]">
+    <Box
+      id="intro"
+      className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]"
+    >
       <Box className="flex flex-col">
         <img
           src={theme === "light" ? ProfilePicDark : ProfilePicLight}
