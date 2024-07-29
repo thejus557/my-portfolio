@@ -44,7 +44,7 @@ const Experience = () => {
           margin: "0 auto",
         }}
       >
-        <Box className="flex flex-col gap-4 p-4 lg:flex-row">
+        <Box className="flex flex-col gap-4 p-1 lg:p-4 lg:flex-row">
           <Typography
             variant="h6"
             sx={{ color: "text.secondary" }}
@@ -52,7 +52,7 @@ const Experience = () => {
             className="text-center text-sm flex justify-center items-center"
             onClick={handleMailClick}
           >
-            <Box className="group mx-6 flex flex-col justify-center items-center">
+            <Box className="group lg:mx-6 flex flex-col justify-center items-center">
               <Typography
                 variant="h5"
                 component="div"

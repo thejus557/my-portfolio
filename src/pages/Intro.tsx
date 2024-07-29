@@ -2,11 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import { USER_DETAILS } from "../json";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-// import ProfilePic from "../assets/profile-pic.png";
 import ProfilePicDark from "../assets/profile-pic-dark.png";
 import ProfilePicLight from "../assets/profile-pic-light.png";
 import { useAtomValue } from "jotai";
 import { themeAtom } from "../store";
+import { Typewriter } from "react-simple-typewriter";
 
 const Intro = () => {
   const theme = useAtomValue(themeAtom);
@@ -34,7 +34,7 @@ const Intro = () => {
           sx={{ color: "text.secondary" }}
           className="mt-4"
         >
-          Hello I'm
+          Hello, I'm
         </Typography>
         <Typography
           variant="h3"
@@ -51,7 +51,20 @@ const Intro = () => {
           sx={{ color: "text.secondary" }}
           className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
         >
-          {USER_DETAILS.PROFESSION}
+          <Typewriter
+            words={[
+              "Frontend Developer",
+              "Backend Developer",
+              "Full Stack Developer",
+              "Open Source Contributor",
+            ]}
+            loop={5}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
         </Typography>
         <Box className="flex gap-4 justify-center">
           <Button
