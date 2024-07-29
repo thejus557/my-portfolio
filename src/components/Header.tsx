@@ -53,12 +53,14 @@ const Header = () => {
           >
             {navItems.map((e) => (
               <>
-                <Box className="hidden lg:flex flex-col group mx-6">
+                <Box
+                  className="hidden lg:flex flex-col group mx-6"
+                  onClick={() => handleItemClick(e)}
+                >
                   <Typography
                     variant="h5"
                     component="div"
                     className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
-                    onClick={() => handleItemClick(e)}
                   >
                     {e}
                   </Typography>

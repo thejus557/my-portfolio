@@ -10,6 +10,16 @@ interface SibebarProps {
 }
 
 const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
+  const handleItemClick = (e: string) => {
+    const element = document.getElementById(e.toLowerCase());
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <Drawer
       container={container}
@@ -47,7 +57,10 @@ const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
         }}
       >
         {navItemsList.map((e) => (
-          <Box className="group mx-6 flex flex-col justify-center items-center">
+          <Box
+            className="group mx-6 flex flex-col justify-center items-center"
+            onClick={() => handleItemClick(e)}
+          >
             <Typography
               variant="h5"
               component="div"
