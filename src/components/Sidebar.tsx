@@ -1,7 +1,7 @@
 import { Drawer, Box, Typography } from "@mui/material";
 import { RxCross2 } from "react-icons/rx";
 
-const container = window.document.body;
+const container = document.getElementById("root");
 
 interface SibebarProps {
   drawerState: boolean;
@@ -25,9 +25,10 @@ const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
     >
       <Box
         sx={{
-          margin: "36px",
-          marginRight: "24px",
-          textAlign: "end",
+          margin: "26px 10px 26px 26px",
+          marginRight: "1px",
+          display: "flex",
+          justifyContent: "flex-end",
         }}
       >
         <RxCross2
@@ -46,13 +47,16 @@ const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
         }}
       >
         {navItemsList.map((e) => (
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, cursor: "pointer" }}
-          >
-            {e}
-          </Typography>
+          <Box className="flex-col group mx-6">
+            <Typography
+              variant="h5"
+              component="div"
+              className="cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+            >
+              {e}
+            </Typography>
+            <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+          </Box>
         ))}
       </Box>
     </Drawer>

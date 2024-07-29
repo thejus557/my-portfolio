@@ -11,7 +11,7 @@ import { useAtom } from "jotai";
 import { themeAtom } from "../store";
 import { AppBar } from "@mui/material";
 
-const navItems = ["About", "Experience", "Projects", "Contact"];
+const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);

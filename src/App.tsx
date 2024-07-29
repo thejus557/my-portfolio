@@ -4,11 +4,12 @@ import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { darkTheme, lightTheme } from "./theme";
 import { useAtomValue } from "jotai";
 import { themeAtom } from "./store";
+import { useSetAtom } from "jotai/react";
+
 import Intro from "./pages/Intro";
 import About from "./pages/About";
-
 import Experience from "./pages/Experience";
-import { useSetAtom } from "jotai/react";
+import Skills from "./pages/Skills";
 
 const App = () => {
   // const [theme, setTheme] = useState<"dark" | "light">("light");
@@ -46,6 +47,7 @@ const App = () => {
           >
             <Intro />
             <About />
+            <Skills />
           </div>
         </div>
       </ThemeProvider>

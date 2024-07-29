@@ -22,3 +22,97 @@ body {
 svg {
   cursor: pointer;
 }
+
+
+.slider {
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  /* height: 100px; */
+  position: absolute;
+  /* width: 200px; */
+  z-index: 2;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 7)); }
+}
+
+@keyframes scroll-reverse {
+  0% { transform: translateX(calc(-250px * 7)); }
+  100% { transform: translateX(0) }
+}
+
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  /* width: calc(250px * 14); */
+}
+
+.slide-track-reverse {
+  animation: scroll-reverse 40s linear infinite;
+  display: flex;
+  /* width: calc(250px * 14); */
+}
+
+.slide {
+  /* height: 250px; */
+  /* width: 250px; */
+}
+
+
+@media (min-width: 425px) {
+  .slider {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider {
+    width: 700px;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider {
+    width: 700px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .slider {
+    width: 950px;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .slider {
+    width: 1150px;
+  }
+}

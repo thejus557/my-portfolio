@@ -7,7 +7,7 @@ import { FaUserGraduate } from "react-icons/fa";
 
 const About = () => {
   return (
-    <Box className="flex flex-col justify-center items-center">
+    <Box className="flex flex-col justify-center items-center mb-4">
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}
