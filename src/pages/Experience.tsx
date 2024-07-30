@@ -89,8 +89,11 @@ const Experience = () => {
           border: "1px solid",
           borderColor: "text.secondary",
           borderRadius: "1rem",
-          padding: "1rem",
-          margin: "0 auto",
+          padding: "8px",
+          margin: "0 1rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Timeline

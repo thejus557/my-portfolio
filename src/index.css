@@ -30,7 +30,7 @@ svg {
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 300px;
+  width: 90vw;
   overflow: hidden;
   -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
   mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
@@ -86,11 +86,11 @@ svg {
 }
 
 
-@media (min-width: 425px) {
+/* @media (min-width: 425px) {
   .slider {
     width: 400px;
   }
-}
+} */
 
 @media (min-width: 768px) {
   .slider {

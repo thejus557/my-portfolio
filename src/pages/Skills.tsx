@@ -29,10 +29,30 @@ function shuffleArray(
   }[]
 ) {
   const shuffledArray = array.slice(); // Create a copy of the array
+
   for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    let j;
+
+    // Ensure that the selected element is not the same as the previous one
+    do {
+      j = Math.floor(Math.random() * (i + 1));
+    } while (j === i && shuffledArray[i].name === shuffledArray[j].name);
+
     [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
+
+  // Final check to ensure no two adjacent elements are the same
+  for (let i = 1; i < shuffledArray.length; i++) {
+    if (shuffledArray[i].name === shuffledArray[i - 1].name) {
+      // Swap with a non-adjacent element
+      const swapIndex = (i + 1) % shuffledArray.length;
+      [shuffledArray[i], shuffledArray[swapIndex]] = [
+        shuffledArray[swapIndex],
+        shuffledArray[i],
+      ];
+    }
+  }
+
   return shuffledArray;
 }
 
@@ -171,7 +191,7 @@ const Skills = () => {
                 skillName={skill.name}
               />
             ))}
-            {skillsJson.map((skill, index) => (
+            {shuffledSkillsOne.map((skill, index) => (
               <HallowBox
                 key={index + skillsJson.length}
                 image={skill.icon}

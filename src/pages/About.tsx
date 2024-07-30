@@ -9,7 +9,7 @@ const About = () => {
   return (
     <Box
       id="about"
-      className="flex flex-col justify-center items-center p-[44px]"
+      className="flex flex-col justify-center items-center py-[44px]"
     >
       <Typography
         variant="h6"

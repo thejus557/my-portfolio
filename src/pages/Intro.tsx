@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import ProfilePic from "../assets/profile-pic 8.png";
 import { Typewriter } from "react-simple-typewriter";
+import Resume from "../assets/Surya_Resume.pdf";
 
 const Intro = () => {
   const handleGithubClick = () => {
@@ -12,6 +13,23 @@ const Intro = () => {
 
   const handleLinkedInClick = () => {
     window.open("https://in.linkedin.com/in/suryateja-k-1825b8151");
+  };
+
+  const handleItemClick = (e: string) => {
+    const element = document.getElementById(e.toLowerCase());
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleDownloadResume = () => {
+    window.open(Resume, "_blank", "noopener,noreferrer");
+
+    // console.log(window.location.origin + "assets/Suryateja_K_Resume.pdf");
+    // window.open(window.location.origin + "assets/Suryateja_K_Resume.pdf");
   };
 
   return (
@@ -72,6 +90,7 @@ const Intro = () => {
               padding: "0.5rem",
               textTransform: "none",
             }}
+            onClick={() => handleDownloadResume()}
           >
             Download CV
           </Button>
@@ -86,6 +105,9 @@ const Intro = () => {
               ":hover": {
                 color: "text.secondary",
               },
+            }}
+            onClick={() => {
+              handleItemClick("contact");
             }}
           >
             Contact Info

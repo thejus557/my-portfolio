@@ -39,7 +39,7 @@ const App = () => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <Header />
-        <div className={`main-app ${theme} m-4 md:m-0`}>
+        <div className={`main-app ${theme} m-2 md:m-0`}>
           <div
             className={`h-full ${
               theme === "dark" ? "dark:bg-[#1c1c1c]" : "bg-white"
