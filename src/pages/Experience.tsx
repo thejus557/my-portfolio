@@ -13,7 +13,7 @@ const experienceJson = [
     location: "Hyderabad, Telangana, India",
     positions: [
       {
-        title: "Senior UI Developer",
+        title: "Sr UI Developer",
         dates: "Aug 2022 - Present",
         duration: "2 years",
         responsibilities: [
@@ -23,7 +23,7 @@ const experienceJson = [
         ],
       },
       {
-        title: "Associate UI Developer",
+        title: "Assoc UI Developer",
         dates: "Mar 2021 - Aug 2022",
         duration: "1 year 6 months",
         responsibilities: [
@@ -56,22 +56,6 @@ const experienceJson = [
           "Contributed to the development of full-stack applications using the MEAN stack (MongoDB, Express.js, Angular, Node.js).",
           "Engaged in coding, debugging, and testing to ensure robust and scalable web solutions.",
           "Collaborated with the development team to meet project requirements and deliver high-quality features.",
-        ],
-      },
-    ],
-  },
-  {
-    company: "Ideal Village Development",
-    location: "Hyderabad, India",
-    positions: [
-      {
-        title: "Web Developer Intern",
-        dates: "Aug 2019 - Sep 2019",
-        duration: "1 month",
-        responsibilities: [
-          "Assisted in the development and maintenance of web applications, focusing on coding and debugging.",
-          "Collaborated with senior developers to implement and refine website features and functionalities.",
-          "Supported project documentation and participated in team meetings and code reviews.",
         ],
       },
     ],
@@ -110,39 +94,50 @@ const Experience = () => {
           margin: "0 auto",
         }}
       >
-        <Timeline>
+        <Timeline
+          sx={{
+            width: "100%",
+          }}
+        >
           {experienceJson.map((exp) => (
-            <TimelineItem>
-              <TimelineOppositeContent color="text.secondary">
-                <Typography variant="body1" component="div" gutterBottom>
-                  {exp.company}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" fontSize={12}>
-                  {exp.location}
-                </Typography>
-              </TimelineOppositeContent>
+            <TimelineItem
+              sx={{
+                "::before": {
+                  content: '""',
+                  display: "none",
+                },
+              }}
+            >
               <TimelineSeparator>
                 <TimelineDot variant="outlined" />
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
                 {exp.positions.map((position, posIndex) => (
-                  <div key={posIndex}>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      gutterBottom
-                    >
-                      {position.title}
+                  <Box key={posIndex} className="mb-4">
+                    <Typography variant="subtitle1" component="div">
+                      {position.title} . {exp.company}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="textSecondary"
                       fontSize={10}
+                      gutterBottom
+                      className="mb-2"
                     >
-                      {position.dates} ({position.duration})
+                      {position.dates}
                     </Typography>
-                  </div>
+                    {position.responsibilities.map((res, resIndex) => (
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        fontSize={12}
+                        key={resIndex}
+                      >
+                        {res}
+                      </Typography>
+                    ))}
+                  </Box>
                 ))}
               </TimelineContent>
             </TimelineItem>

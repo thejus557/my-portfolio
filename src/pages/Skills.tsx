@@ -21,6 +21,21 @@ import VuexIcon from "../assets/skills/vuex-1.svg";
 import GitIcon from "../assets/skills/icons8-git-480.png";
 import NxIcon from "../assets/skills/nx-logo.png";
 
+function shuffleArray(
+  array: {
+    name: string;
+    icon: string;
+    experience: string;
+  }[]
+) {
+  const shuffledArray = array.slice(); // Create a copy of the array
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
+
 const skillsJson = [
   {
     name: "HTML",
@@ -121,6 +136,10 @@ const skillsJson = [
 ];
 
 const Skills = () => {
+  const shuffledSkillsOne = shuffleArray(skillsJson);
+  const shuffledSkillsTwo = shuffleArray(skillsJson);
+  const shuffledSkillsThree = shuffleArray(skillsJson);
+
   return (
     <Box
       id="skills"
@@ -145,7 +164,7 @@ const Skills = () => {
       <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20">
         <Box className="slider flex text-center items-center justify-center">
           <Box className="slide-track flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
-            {skillsJson.map((skill, index) => (
+            {shuffledSkillsOne.map((skill, index) => (
               <HallowBox
                 key={index}
                 image={skill.icon}
@@ -164,8 +183,28 @@ const Skills = () => {
       </Box>
       <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20">
         <Box className="slider flex text-center items-center justify-center mix-blend-plus-darker">
-          <Box className="slide-track-reverse flex text-center justify-between md:flex-row-reverse lg:flex-row-reverse gap-5 p-4">
+          <Box className="slide-track-reverse flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
+            {shuffledSkillsTwo.reverse().map((skill, index) => (
+              <HallowBox
+                key={index}
+                image={skill.icon}
+                skillName={skill.name}
+              />
+            ))}
             {skillsJson.map((skill, index) => (
+              <HallowBox
+                key={index + skillsJson.length}
+                image={skill.icon}
+                skillName={skill.name}
+              />
+            ))}
+          </Box>
+        </Box>
+      </Box>
+      <Box className="flex md:hidden flex-col justify-center items-center gap:10 lg:gap-20">
+        <Box className="slider flex text-center items-center justify-center mix-blend-plus-darker">
+          <Box className="slide-track flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
+            {shuffledSkillsThree.map((skill, index) => (
               <HallowBox
                 key={index}
                 image={skill.icon}

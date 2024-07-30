@@ -11,6 +11,7 @@ interface SibebarProps {
 
 const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
   const handleItemClick = (e: string) => {
+    onToggle();
     const element = document.getElementById(e.toLowerCase());
     if (element) {
       element.scrollIntoView({
