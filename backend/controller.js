@@ -1,6 +1,7 @@
 const { DataAPIClient } = require("@datastax/astra-db-ts");
 const { RecursiveCharacterTextSplitter } = require("@langchain/textsplitters");
-const sampleData = require("./json/user-data.json");
+// const sampleData = require("./json/user-data.json");
+const sampleData = [];
 const { HfInference } = require("@huggingface/inference");
 
 require("dotenv").config();
