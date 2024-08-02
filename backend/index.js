@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bp.json());
 app.use(cors());
+app.options("*", cors());
 
 app.post("/chat", ChatController);
 
