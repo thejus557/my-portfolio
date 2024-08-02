@@ -1,5 +1,9 @@
 import { createTheme } from "@mui/material";
 
+function container() {
+  return document.getElementById("root");
+}
+
 export const lightTheme = createTheme({
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
@@ -36,6 +40,11 @@ export const lightTheme = createTheme({
         root: {
           color: "#000000", // Default text color
         },
+      },
+    },
+    MuiPopover: {
+      defaultProps: {
+        container,
       },
     },
   },

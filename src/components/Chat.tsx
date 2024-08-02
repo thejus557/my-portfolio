@@ -2,12 +2,12 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
-import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { IoSend } from "react-icons/io5";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
 const DialogComponent = ({
   isOpen,
   closeDialog,
@@ -16,8 +16,24 @@ const DialogComponent = ({
   setMessage,
   handleSend,
 }: any) => {
+  const root = document.getElementById("root");
+
   return (
-    <Dialog open={isOpen} onClose={closeDialog} fullWidth maxWidth="sm">
+    <Dialog
+      open={isOpen}
+      onClose={closeDialog}
+      fullWidth
+      maxWidth="sm"
+      container={root}
+      sx={{
+        backdropFilter: "blur(5px)",
+        "& .MuiDialog-paper": {
+          minHeight: "60%",
+          maxHeight: "80%",
+          justifyContent: "space-around",
+        },
+      }}
+    >
       <DialogTitle
         sx={{
           display: "flex",
@@ -26,32 +42,25 @@ const DialogComponent = ({
         }}
       >
         <span>Chat with Surya</span>
-        <IconButton
-          edge="end"
-          color="inherit"
-          onClick={closeDialog}
-          aria-label="close"
-        >
-          X
-        </IconButton>
+        <IoMdCloseCircleOutline onClick={closeDialog} />
       </DialogTitle>
       <DialogContent className="max-h-72 overflow-y-auto">
         {chat.map((msg, index) => (
           <Box
             key={index}
-            className={`flex items-center mb-2 ${
+            className={`flex items-center m-2 ${
               msg.sender === "user" ? "justify-end" : "justify-start"
             }`}
           >
+            <span>{msg.text}</span>
             <Avatar
-              className="mr-2"
+              className="ml-2"
               src={msg.sender === "user" ? "/user-icon.png" : "/bot-icon.png"}
             />
-            <span>{msg.text}</span>
           </Box>
         ))}
       </DialogContent>
-      <DialogActions className="flex items-center px-4 py-2">
+      <DialogActions className="flex items-center px-4 py-2 relative">
         <TextField
           autoFocus
           margin="dense"
@@ -61,18 +70,15 @@ const DialogComponent = ({
           fullWidth
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-        />
-        <Button
-          onClick={handleSend}
-          color="primary"
-          variant="text"
           sx={{
-            width: "fit-content",
-            height: "fit-content",
+            "& .MuiInputBase-root input": {
+              paddingRight: "54px",
+            },
           }}
-        >
-          <IoSend />
-        </Button>
+        />
+        <Typography className="absolute p-4 top-4 right-1">
+          <IoSend className="w-16 root-h-16" onClick={handleSend} />
+        </Typography>
       </DialogActions>
     </Dialog>
   );

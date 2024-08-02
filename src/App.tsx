@@ -19,16 +19,31 @@ import DialogComponent from "./components/Chat";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [chat, setChat] = useState([]);
+  const [chat, setChat] = useState<Array<any>>([]);
 
   const theme = useAtomValue(themeAtom);
   const setTheme = useSetAtom(themeAtom);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (message.trim()) {
       setChat([...chat, { sender: "user", text: message }]);
       setMessage("");
     }
+
+    const url = "https://my-portfolio-nodebackend-b444qcdtf.vercel.app/chat";
+
+    const data = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
+    });
+    const response = await data.json();
+    setChat([
+      ...chat,
+      { sender: "surya", text: response.response.generated_text },
+    ]);
   };
 
   useEffect(() => {
@@ -53,7 +68,7 @@ const App = () => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <Header />
-        {isOpen && (
+        {true && (
           <DialogComponent
             isOpen={isOpen}
             closeDialog={() => setIsOpen(false)}
