@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import ScrollAnimation from "react-animate-on-scroll";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoLinkedin } from "react-icons/io5";
@@ -21,6 +22,11 @@ const Experience = () => {
       id="contact"
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
+       <ScrollAnimation
+        initiallyVisible={false}
+        animateIn="fadeInDown"
+        animatePreScroll={false}
+      >
       <Typography
         variant="h6"
         sx={{ color: "text.secondary" }}
@@ -37,7 +43,12 @@ const Experience = () => {
       >
         Contact Me
       </Typography>
-
+      </ScrollAnimation>
+      <ScrollAnimation
+        initiallyVisible={false}
+        animateIn="flipInX"
+        animatePreScroll={false}
+      >
       <Box
         sx={{
           border: "1px solid",
@@ -47,7 +58,9 @@ const Experience = () => {
           margin: "0 auto",
         }}
       >
+        
         <Box className="flex flex-col gap-4 p-1 lg:p-4 lg:flex-row">
+          
           <Typography
             variant="h6"
             sx={{ color: "text.secondary" }}
@@ -109,6 +122,7 @@ const Experience = () => {
           </Typography>
         </Box>
       </Box>
+        </ScrollAnimation>
     </Box>
   );
 };

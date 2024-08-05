@@ -1,6 +1,4 @@
-import { Box, Typography } from "@mui/material";
-
-import HallowBox from "../components/HallowBox";
+import { Box, Card, Paper, Typography } from "@mui/material";
 
 import AngularIcon from "../assets/skills/icons8-angular-480.png";
 import CSSIcon from "../assets/skills/icons8-css-480.png";
@@ -20,41 +18,7 @@ import NGRXIcon from "../assets/skills/ngrx.svg";
 import VuexIcon from "../assets/skills/vuex-1.svg";
 import GitIcon from "../assets/skills/icons8-git-480.png";
 import NxIcon from "../assets/skills/nx-logo.png";
-
-function shuffleArray(
-  array: {
-    name: string;
-    icon: string;
-    experience: string;
-  }[]
-) {
-  const shuffledArray = array.slice(); // Create a copy of the array
-
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    let j;
-
-    // Ensure that the selected element is not the same as the previous one
-    do {
-      j = Math.floor(Math.random() * (i + 1));
-    } while (j === i && shuffledArray[i].name === shuffledArray[j].name);
-
-    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-  }
-
-  // Final check to ensure no two adjacent elements are the same
-  for (let i = 1; i < shuffledArray.length; i++) {
-    if (shuffledArray[i].name === shuffledArray[i - 1].name) {
-      // Swap with a non-adjacent element
-      const swapIndex = (i + 1) % shuffledArray.length;
-      [shuffledArray[i], shuffledArray[swapIndex]] = [
-        shuffledArray[swapIndex],
-        shuffledArray[i],
-      ];
-    }
-  }
-
-  return shuffledArray;
-}
+import ScrollAnimation from "react-animate-on-scroll";
 
 const skillsJson = [
   {
@@ -149,97 +113,71 @@ const skillsJson = [
     experience: "2",
   },
   {
-    name: "Nx Monorepo",
+    name: "Nx Repo",
     icon: NxIcon,
     experience: "2",
   },
 ];
 
 const Skills = () => {
-  const shuffledSkillsOne = shuffleArray(skillsJson);
-  const shuffledSkillsTwo = shuffleArray(skillsJson);
-  const shuffledSkillsThree = shuffleArray(skillsJson);
-
   return (
     <Box
       id="skills"
       className="flex flex-col justify-center items-center mb-4 min-h-[calc(100dvh-120px)]"
     >
-      <Typography
-        variant="h6"
-        sx={{ color: "text.secondary" }}
-        component="div"
-        className="text-center mb-2 text-sm"
+      <ScrollAnimation
+        initiallyVisible={false}
+        animateIn="fadeInDown"
+        animatePreScroll={false}
       >
-        Checkout my
-      </Typography>
-      <Typography
-        variant="h2"
-        sx={{ fontWeight: "bold" }}
-        component="div"
-        className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
-      >
-        Skill Set
-      </Typography>
-      <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20">
-        <Box className="slider flex text-center items-center justify-center">
-          <Box className="slide-track flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
-            {shuffledSkillsOne.map((skill, index) => (
-              <HallowBox
-                key={index}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-            {shuffledSkillsOne.map((skill, index) => (
-              <HallowBox
-                key={index + skillsJson.length}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-          </Box>
-        </Box>
-      </Box>
-      <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20">
-        <Box className="slider flex text-center items-center justify-center mix-blend-plus-darker">
-          <Box className="slide-track-reverse flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
-            {shuffledSkillsTwo.reverse().map((skill, index) => (
-              <HallowBox
-                key={index}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-            {skillsJson.map((skill, index) => (
-              <HallowBox
-                key={index + skillsJson.length}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-          </Box>
-        </Box>
-      </Box>
-      <Box className="flex md:hidden flex-col justify-center items-center gap:10 lg:gap-20">
-        <Box className="slider flex text-center items-center justify-center mix-blend-plus-darker">
-          <Box className="slide-track flex text-center justify-between md:flex-row lg:flex-row gap-5 p-4">
-            {shuffledSkillsThree.map((skill, index) => (
-              <HallowBox
-                key={index}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-            {skillsJson.map((skill, index) => (
-              <HallowBox
-                key={index + skillsJson.length}
-                image={skill.icon}
-                skillName={skill.name}
-              />
-            ))}
-          </Box>
-        </Box>
+        <Typography
+          variant="h6"
+          sx={{ color: "text.secondary" }}
+          component="div"
+          className="text-center mb-2 text-sm"
+        >
+          Look at my
+        </Typography>
+        <Typography
+          variant="h2"
+          sx={{ fontWeight: "bold" }}
+          component="div"
+          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+        >
+          Skills
+        </Typography>
+      </ScrollAnimation>
+      <Box className="grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 p-4">
+        {skillsJson.map((skill) => (
+          <ScrollAnimation
+            initiallyVisible={false}
+            animateIn="zoomIn"
+            animatePreScroll={false}
+          >
+            <Box
+              sx={{
+                border: "1px solid",
+                borderColor: "text.secondary",
+                padding: "1rem",
+                borderRadius: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+              className="w-[120px] p-4"
+            >
+              <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                }}
+                className="text-base"
+              >
+                {skill.name}
+              </Typography>
+            </Box>
+          </ScrollAnimation>
+        ))}
       </Box>
     </Box>
   );

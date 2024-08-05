@@ -5,6 +5,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { Box, Typography } from "@mui/material";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const experienceJson = [
   {
@@ -67,28 +68,30 @@ const Experience = () => {
       id="experience"
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
-      <Typography
-        variant="h6"
-        sx={{ color: "text.secondary" }}
-        component="div"
-        className="text-center mb-2 text-sm"
+      <ScrollAnimation
+        initiallyVisible={false}
+        animateIn="fadeInDown"
+        animatePreScroll={false}
       >
-        Go through my
-      </Typography>
-      <Typography
-        variant="h2"
-        sx={{ fontWeight: "bold" }}
-        component="div"
-        className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
-      >
-        Experience
-      </Typography>
-
+        <Typography
+          variant="h6"
+          sx={{ color: "text.secondary" }}
+          component="div"
+          className="text-center mb-2 text-sm"
+        >
+          Go through my
+        </Typography>
+        <Typography
+          variant="h2"
+          sx={{ fontWeight: "bold" }}
+          component="div"
+          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+        >
+          Experience
+        </Typography>
+      </ScrollAnimation>
       <Box
         sx={{
-          border: "1px solid",
-          borderColor: "text.secondary",
-          borderRadius: "1rem",
           padding: "8px",
           margin: "0 1rem",
           display: "flex",
@@ -102,6 +105,11 @@ const Experience = () => {
           }}
         >
           {experienceJson.map((exp) => (
+             <ScrollAnimation
+             initiallyVisible={false}
+             animateIn="bounceInUp"
+             animatePreScroll={false}
+           >
             <TimelineItem
               sx={{
                 "::before": {
@@ -115,34 +123,65 @@ const Experience = () => {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                {exp.positions.map((position, posIndex) => (
-                  <Box key={posIndex} className="mb-4">
-                    <Typography variant="subtitle1" component="div">
-                      {position.title} . {exp.company}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      fontSize={10}
-                      gutterBottom
-                      className="mb-2"
-                    >
-                      {position.dates}
-                    </Typography>
-                    {position.responsibilities.map((res, resIndex) => (
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        fontSize={12}
-                        key={resIndex}
+                <ScrollAnimation
+                  initiallyVisible={false}
+                  animateIn="bounceInUp"
+                  animatePreScroll={false}
+                >
+                  <Box
+                    sx={{
+                      border: "1px solid",
+                      borderColor: "text.secondary",
+                      borderRadius: "1rem",
+                    }}
+                  >
+                    {exp.positions.map((position, posIndex) => (
+                      <ScrollAnimation
+                        initiallyVisible={false}
+                        animateIn="bounceInUp"
+                        animatePreScroll={false}
                       >
-                        {res}
-                      </Typography>
+                        <Box
+                          sx={{
+                            borderBottom: "1px dashed",
+                            borderColor: "text.secondary",
+                            ...(posIndex === exp.positions.length - 1 && {
+                              borderBottom: "none",
+                            }),
+                          }}
+                          key={posIndex}
+                          className="mb-4 p-4"
+                        >
+                          <Typography variant="subtitle1" component="div">
+                            {position.title} . {exp.company}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            fontSize={10}
+                            gutterBottom
+                            className="mb-2"
+                          >
+                            {position.dates}
+                          </Typography>
+                          {position.responsibilities.map((res, resIndex) => (
+                            <Typography
+                              variant="body2"
+                              color="textSecondary"
+                              fontSize={12}
+                              key={resIndex}
+                            >
+                              {res}
+                            </Typography>
+                          ))}
+                        </Box>
+                      </ScrollAnimation>
                     ))}
                   </Box>
-                ))}
+                </ScrollAnimation>
               </TimelineContent>
             </TimelineItem>
+            </ScrollAnimation>
           ))}
         </Timeline>
       </Box>

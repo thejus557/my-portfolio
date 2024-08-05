@@ -33,13 +33,15 @@ const App = () => {
       setTheme("light");
       document.body.style.backgroundColor = "#fff";
     }
+
+  window.scrollBy(0, 1);
   }, [setTheme]);
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
         <Header />
-        <div className={`main-app ${theme} m-2 md:m-0`}>
+        <div className={`main-app ${theme} m-2 md:m-0 overflow-x-hidden`}>
           <div
             className={`h-full ${
               theme === "dark" ? "dark:bg-[#1c1c1c]" : "bg-white"

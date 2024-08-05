@@ -10,6 +10,7 @@ import { RxMoon } from "react-icons/rx";
 import { useAtom } from "jotai";
 import { themeAtom } from "../store";
 import { AppBar } from "@mui/material";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const navItems = ["About", "Skills", "Experience", "Contact"];
 
@@ -35,72 +36,85 @@ const Header = () => {
     <>
       <AppBar className="shadow-none bg-none relative">
         <Box className="min-h-[64px] h-[120px] flex justify-between mx-2 md:mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Typography
-              component="div"
-              sx={{ flexGrow: 1 }}
-              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl"
-            >
-              {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
+          <ScrollAnimation
+            duration={2}
+            initiallyVisible={true}
+            animateIn="backInLeft"
+            animatePreScroll={false}
           >
-            {navItems.map((e) => (
-              <>
-                <Box
-                  className="hidden lg:flex flex-col group mx-6"
-                  onClick={() => handleItemClick(e)}
-                >
-                  <Typography
-                    variant="h5"
-                    component="div"
-                    className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
-                  >
-                    {e}
-                  </Typography>
-                  <Box className="h-[2px] hidden lg:block w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
-                </Box>
-              </>
-            ))}
-            <Typography
-              variant="h5"
-              component="div"
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography
+                component="div"
+                sx={{ flexGrow: 1 }}
+                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+              >
+                {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
+              </Typography>
+            </Box>
+          </ScrollAnimation>
+          <ScrollAnimation
+            duration={2}
+            initiallyVisible={true}
+            animateIn="backInRight"
+            animatePreScroll={false}
+          >
+            <Box
               sx={{
-                flexGrow: 1,
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
-              {theme === "dark" && (
-                <RxSun
-                  fontSize={36}
-                  className="mx-2 "
-                  onClick={handleToggleTheme}
-                />
-              )}
+              {navItems.map((e) => (
+                <>
+                  <Box
+                    className="hidden lg:flex flex-col group mx-6"
+                    onClick={() => handleItemClick(e)}
+                  >
+                    <Typography
+                      variant="h5"
+                      component="div"
+                      className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+                    >
+                      {e}
+                    </Typography>
+                    <Box className="h-[2px] hidden lg:block w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                  </Box>
+                </>
+              ))}
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {theme === "dark" && (
+                  <RxSun
+                    fontSize={36}
+                    className="mx-2 "
+                    onClick={handleToggleTheme}
+                  />
+                )}
 
-              {theme === "light" && (
-                <RxMoon
-                  fontSize={36}
-                  className="mx-2 "
-                  onClick={handleToggleTheme}
-                />
-              )}
-            </Typography>
+                {theme === "light" && (
+                  <RxMoon
+                    fontSize={36}
+                    className="mx-2 "
+                    onClick={handleToggleTheme}
+                  />
+                )}
+              </Typography>
 
-            <RxHamburgerMenu
-              fontSize={36}
-              className="mx-2 lg:hidden"
-              onClick={handleToggleSidebar}
-            />
-          </Box>
+              <RxHamburgerMenu
+                fontSize={36}
+                className="mx-2 lg:hidden"
+                onClick={handleToggleSidebar}
+              />
+            </Box>
+          </ScrollAnimation>
         </Box>
       </AppBar>
 
