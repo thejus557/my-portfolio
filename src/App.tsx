@@ -30,7 +30,8 @@ const App = () => {
       setMessage("");
     }
 
-    const url = "https://my-portfolio-nodebackend-b444qcdtf.vercel.app/chat";
+    const url =
+      "https://my-portfolio-n-git-8d4686-suryatejakandukuru8gmailcoms-projects.vercel.app/chat";
 
     const data = await fetch(url, {
       method: "POST",
