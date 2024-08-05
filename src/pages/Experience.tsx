@@ -69,6 +69,7 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
+        animateOnce={true}
         initiallyVisible={false}
         animateIn="fadeInDown"
         animatePreScroll={false}
@@ -105,82 +106,85 @@ const Experience = () => {
           }}
         >
           {experienceJson.map((exp) => (
-             <ScrollAnimation
-             initiallyVisible={false}
-             animateIn="bounceInUp"
-             animatePreScroll={false}
-           >
-            <TimelineItem
-              sx={{
-                "::before": {
-                  content: '""',
-                  display: "none",
-                },
-              }}
+            <ScrollAnimation
+              animateOnce={true}
+              initiallyVisible={false}
+              animateIn="bounceInUp"
+              animatePreScroll={false}
             >
-              <TimelineSeparator>
-                <TimelineDot variant="outlined" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <ScrollAnimation
-                  initiallyVisible={false}
-                  animateIn="bounceInUp"
-                  animatePreScroll={false}
-                >
-                  <Box
-                    sx={{
-                      border: "1px solid",
-                      borderColor: "text.secondary",
-                      borderRadius: "1rem",
-                    }}
+              <TimelineItem
+                sx={{
+                  "::before": {
+                    content: '""',
+                    display: "none",
+                  },
+                }}
+              >
+                <TimelineSeparator>
+                  <TimelineDot variant="outlined" />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    initiallyVisible={false}
+                    animateIn="bounceInUp"
+                    animatePreScroll={false}
                   >
-                    {exp.positions.map((position, posIndex) => (
-                      <ScrollAnimation
-                        initiallyVisible={false}
-                        animateIn="bounceInUp"
-                        animatePreScroll={false}
-                      >
-                        <Box
-                          sx={{
-                            borderBottom: "1px dashed",
-                            borderColor: "text.secondary",
-                            ...(posIndex === exp.positions.length - 1 && {
-                              borderBottom: "none",
-                            }),
-                          }}
-                          key={posIndex}
-                          className="mb-4 p-4"
+                    <Box
+                      sx={{
+                        border: "1px solid",
+                        borderColor: "text.secondary",
+                        borderRadius: "1rem",
+                      }}
+                    >
+                      {exp.positions.map((position, posIndex) => (
+                        <ScrollAnimation
+                          animateOnce={true}
+                          initiallyVisible={false}
+                          animateIn="bounceInUp"
+                          animatePreScroll={false}
                         >
-                          <Typography variant="subtitle1" component="div">
-                            {position.title} . {exp.company}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            fontSize={10}
-                            gutterBottom
-                            className="mb-2"
+                          <Box
+                            sx={{
+                              borderBottom: "1px dashed",
+                              borderColor: "text.secondary",
+                              ...(posIndex === exp.positions.length - 1 && {
+                                borderBottom: "none",
+                              }),
+                            }}
+                            key={posIndex}
+                            className="mb-4 p-4"
                           >
-                            {position.dates}
-                          </Typography>
-                          {position.responsibilities.map((res, resIndex) => (
+                            <Typography variant="subtitle1" component="div">
+                              {position.title} . {exp.company}
+                            </Typography>
                             <Typography
                               variant="body2"
                               color="textSecondary"
-                              fontSize={12}
-                              key={resIndex}
+                              fontSize={10}
+                              gutterBottom
+                              className="mb-2"
                             >
-                              {res}
+                              {position.dates}
                             </Typography>
-                          ))}
-                        </Box>
-                      </ScrollAnimation>
-                    ))}
-                  </Box>
-                </ScrollAnimation>
-              </TimelineContent>
-            </TimelineItem>
+                            {position.responsibilities.map((res, resIndex) => (
+                              <Typography
+                                variant="body2"
+                                color="textSecondary"
+                                fontSize={12}
+                                key={resIndex}
+                              >
+                                {res}
+                              </Typography>
+                            ))}
+                          </Box>
+                        </ScrollAnimation>
+                      ))}
+                    </Box>
+                  </ScrollAnimation>
+                </TimelineContent>
+              </TimelineItem>
             </ScrollAnimation>
           ))}
         </Timeline>

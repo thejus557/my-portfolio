@@ -126,6 +126,7 @@ const Skills = () => {
       className="flex flex-col justify-center items-center mb-4 min-h-[calc(100dvh-120px)]"
     >
       <ScrollAnimation
+        animateOnce={true}
         initiallyVisible={false}
         animateIn="fadeInDown"
         animatePreScroll={false}
@@ -150,6 +151,7 @@ const Skills = () => {
       <Box className="grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 p-4">
         {skillsJson.map((skill) => (
           <ScrollAnimation
+            animateOnce={true}
             initiallyVisible={false}
             animateIn="zoomIn"
             animatePreScroll={false}

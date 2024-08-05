@@ -36,6 +36,7 @@ const Intro = () => {
       className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]"
     >
       <ScrollAnimation
+        animateOnce={true}
         duration={2}
         initiallyVisible={true}
         animatePreScroll={false}
@@ -51,6 +52,7 @@ const Intro = () => {
 
       <Box className="flex flex-col text-center">
         <ScrollAnimation
+          animateOnce={true}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
@@ -66,6 +68,7 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
+          animateOnce={true}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
@@ -81,6 +84,7 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
+          animateOnce={true}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
@@ -110,6 +114,7 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
+          animateOnce={true}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
@@ -148,6 +153,7 @@ const Intro = () => {
           </Box>
         </ScrollAnimation>
         <ScrollAnimation
+          animateOnce={true}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}

@@ -37,6 +37,7 @@ const Header = () => {
       <AppBar className="shadow-none bg-none relative">
         <Box className="min-h-[64px] h-[120px] flex justify-between mx-2 md:mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
           <ScrollAnimation
+            animateOnce={true}
             duration={2}
             initiallyVisible={true}
             animateIn="backInLeft"
@@ -53,6 +54,7 @@ const Header = () => {
             </Box>
           </ScrollAnimation>
           <ScrollAnimation
+            animateOnce={true}
             duration={2}
             initiallyVisible={true}
             animateIn="backInRight"
