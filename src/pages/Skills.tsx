@@ -1,4 +1,4 @@
-import { Box, Button, keyframes, Typography } from "@mui/material";
+import { Box, keyframes, Typography } from "@mui/material";
 
 import AngularIcon from "../assets/skills/icons8-angular-480.png";
 import CSSIcon from "../assets/skills/icons8-css-480.png";
