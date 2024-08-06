@@ -3,44 +3,53 @@ import { useEffect } from "react";
 import { themeAtom } from "../store";
 
 const Background = () => {
-  
+ 
+
   useEffect(() => {
     const lights = document.querySelectorAll(".lights .light");
-
-    const scrollElement = (element: Element, speedY: number) => {
+  
+    const scrollElement = (element: Element, speedY: number, direction: number) => {
       let y = 0;
-
+  
       const scroll = () => {
-        y += speedY;
-
-        if (y > 1200 || y < -1200) y = 0;
-
+        y += speedY * direction;
+  
+        // Reset position when it goes out of bounds
+        if (y > 1200) y = -1200;
+        if (y < -1200) y = 1200;
+  
         // Set the transform attribute to simulate scrolling
         element.setAttribute("transform", `matrix(1, 0, 0, 1, 0, ${y})`);
         requestAnimationFrame(scroll);
       };
-
+  
       scroll();
     };
-
+  
     const animateScroll = (elements: NodeListOf<Element>) => {
       elements.forEach((element) => {
-        // Generate random speed for both x and y directions
-        const speedY = (Math.random() - 0.5) * 10; // Adjust speed range as needed
-
-        scrollElement(element, speedY);
+        // Generate random speed for the y direction
+        const speedY = (Math.random() * 10) + 1; // Random speed between 1 and 10
+  
+        // Randomly determine the direction (1 for top-to-bottom, -1 for bottom-to-top)
+        const direction = Math.random() > 0.5 ? 1 : -1;
+  
+        scrollElement(element, speedY, direction);
       });
     };
-
-   // animateScroll(lines);
+  
     animateScroll(lights);
-  }, [])
+  }, []);
+  
+  
 
   const theme = useAtomValue(themeAtom);
 
-
   return (
-    <div id="canvas_cyberlines" className={`canvas canvas-cyberlines ${theme} fixed`}>
+    <div
+      id="canvas_cyberlines"
+      className={`canvas canvas-cyberlines ${theme} fixed`}
+    >
       <svg
         id="cyberlines"
         className="w-screen h-screen"
@@ -52,7 +61,6 @@ const Background = () => {
         preserveAspectRatio="none"
       >
         <g className="lines">
-        <rect className="line" x="300.6" width="4.5" height="1080"></rect>
           <rect className="line" x="1253.6" width="4.5" height="1080"></rect>
           <rect className="line" x="873.3" width="1.8" height="1080"></rect>
           <rect className="line" x="1100" width="1.8" height="1080"></rect>
@@ -70,15 +78,8 @@ const Background = () => {
           <rect className="line" x="328.7" width="1.8" height="1080"></rect>
           <rect className="line" x="300.8" width="4.6" height="1080"></rect>
           <rect className="line" x="1666.4" width="0.9" height="1080"></rect>
-          <rect className="line" x="124.2" width="0.9" height="1080"></rect>
         </g>
         <g className="lights">
-        <path
-            className="light1 light"
-            d="M619.5,298.4H615v19.5h4.5V298.4z M619.5,674.8H615v9.8h4.5V674.8z M619.5,135.1H615v5.6h4.5V135.1zM619.5,55.5H615v68.7h4.5V55.5z"
-            data-svg-origin="615 55.5"
-            transform="matrix(1,0,0,1,0,-816.2836363636384)"
-          ></path>
           <path
             className="light1 light"
             d="M619.5,298.4H615v19.5h4.5V298.4z M619.5,674.8H615v9.8h4.5V674.8z M619.5,135.1H615v5.6h4.5V135.1zM619.5,55.5H615v68.7h4.5V55.5z"
@@ -180,12 +181,6 @@ const Background = () => {
             d="M330.5,170.7h-1.8v13.7h1.8V170.7z M330.5,435.1h-1.8v6.8h1.8V435.1z M330.5,55.9h-1.8v4h1.8V55.9z M330.5,0h-1.8v48.3h1.8V0z"
             data-svg-origin="328.70001220703125 0"
             transform="matrix(1,0,0,1,0,-762.6150000000002)"
-          ></path>
-           <path
-            className="light1 light"
-            d="M619.5,298.4H615v19.5h4.5V298.4z M619.5,674.8H615v9.8h4.5V674.8z M619.5,135.1H615v5.6h4.5V135.1zM619.5,55.5H615v68.7h4.5V55.5z"
-            data-svg-origin="615 55.5"
-            transform="matrix(1,0,0,1,0,-816.2836363636384)"
           ></path>
         </g>
       </svg>
