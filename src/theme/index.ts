@@ -23,6 +23,14 @@ export const lightTheme = createTheme({
     divider: "#e0e0e0", // Light grey dividers
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+         boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
+         border:"1px solid #f6b846d1"
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {
@@ -64,6 +72,14 @@ export const darkTheme = createTheme({
     divider: "#333333", // Dark grey dividers
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
+        border:"1px solid #f6b846d1"
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {

@@ -94,8 +94,8 @@ const Intro = () => {
             variant="h4"
             component="div"
             fontWeight={"bold"}
-            sx={{ color: "text.secondary" }}
-            className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            // sx={{ color: "text.secondary" }}
+            className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-light-gold"
           >
             <Typewriter
               words={[

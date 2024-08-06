@@ -17,6 +17,7 @@ export default {
           textPrimary: "#000000",
           textSecondary: "#555555",
           divider: "#e0e0e0",
+          gold: "#f6b846",
         },
         dark: {
           primary: "#ffffff",
@@ -26,6 +27,7 @@ export default {
           textPrimary: "#ffffff",
           textSecondary: "#aaaaaa",
           divider: "#333333",
+          gold: "#f6b846",
         },
       },
     },

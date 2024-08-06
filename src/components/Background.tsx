@@ -33,7 +33,7 @@ const Background = () => {
       });
     };
 
-    animateScroll(lines);
+   // animateScroll(lines);
     animateScroll(lights);
   }, [])
 
