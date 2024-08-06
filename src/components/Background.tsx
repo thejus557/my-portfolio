@@ -5,10 +5,9 @@ import { themeAtom } from "../store";
 const Background = () => {
   
   useEffect(() => {
-    const lines = document.querySelectorAll(".lines .line");
     const lights = document.querySelectorAll(".lights .light");
 
-    const scrollElement = (element, speedY) => {
+    const scrollElement = (element: Element, speedY: number) => {
       let y = 0;
 
       const scroll = () => {
@@ -24,7 +23,7 @@ const Background = () => {
       scroll();
     };
 
-    const animateScroll = (elements) => {
+    const animateScroll = (elements: NodeListOf<Element>) => {
       elements.forEach((element) => {
         // Generate random speed for both x and y directions
         const speedY = (Math.random() - 0.5) * 10; // Adjust speed range as needed
@@ -45,13 +44,11 @@ const Background = () => {
       <svg
         id="cyberlines"
         className="w-screen h-screen"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
         viewBox="0 0 1920 1080"
-        xml:space="preserve"
         preserveAspectRatio="none"
       >
         <g className="lines">

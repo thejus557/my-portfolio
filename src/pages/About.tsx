@@ -1,4 +1,4 @@
-import { Box, Card, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 
 import ProfilePic from "../assets/profile-pic-2.png";
 
