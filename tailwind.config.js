@@ -31,8 +31,8 @@ export default {
         },
       },
       gradientColorStops: {
-        'gold-40': 'rgba(246, 184, 70, 0.3)',
-        'gold-1': 'rgba(246, 184, 70, 0.1)',
+        'gold-40': 'rgba(246, 184, 70, 0.5)',
+        'gold-1': 'rgba(246, 184, 70, 0.3)',
       },
     },
   },
