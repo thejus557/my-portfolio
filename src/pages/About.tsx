@@ -131,7 +131,7 @@ const About = () => {
                 className="mx-4 md:mx-0"
               >
                 <Typography sx={{ color: "text.secondary", padding: "1rem" }}>
-                  Well, I'm a Frontend Developer passionate about creating
+                  Well, I'm a Frontend Developer expert in creating
                   top-tier user interfaces. With extensive experience in UI
                   development and a keen eye for detail, I've made significant
                   contributions to various projects and organizations.
