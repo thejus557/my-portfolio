@@ -22,6 +22,31 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 const skillsJson = [
   {
+    name: "React",
+    icon: ReactNativeIcon,
+    experience: "4.5",
+  },
+  {
+    name: "Angular",
+    icon: AngularIcon,
+    experience: "3.5",
+  },
+  {
+    name: "VueJS",
+    icon: VueJSIcon,
+    experience: "2.5",
+  },
+  {
+    name: "Redux",
+    icon: ReduxIcon,
+    experience: "4.5",
+  },
+  {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    experience: "3",
+  },
+  {
     name: "HTML",
     icon: HTMLIcon,
     experience: "4.5",
@@ -31,11 +56,7 @@ const skillsJson = [
     icon: CSSIcon,
     experience: "4.5",
   },
-  {
-    name: "Tailwind",
-    icon: TailwindIcon,
-    experience: "3",
-  },
+  
   {
     name: "JavaScript",
     icon: JavaScriptIcon,
@@ -46,23 +67,10 @@ const skillsJson = [
     icon: TypeScriptIcon,
     experience: "4.5",
   },
-  {
-    name: "React",
-    icon: ReactNativeIcon,
-    experience: "4.5",
-  },
+ 
+ 
 
-  {
-    name: "Redux",
-    icon: ReduxIcon,
-    experience: "4.5",
-  },
-
-  {
-    name: "Angular",
-    icon: AngularIcon,
-    experience: "3.5",
-  },
+ 
 
   {
     name: "Rxjs",
@@ -74,11 +82,7 @@ const skillsJson = [
     icon: NGRXIcon,
     experience: "3.5",
   },
-  {
-    name: "VueJS",
-    icon: VueJSIcon,
-    experience: "2.5",
-  },
+ 
 
   {
     name: "Vuex",
@@ -138,7 +142,7 @@ const Skills = () => {
           component="div"
           className="text-center mb-2 text-sm"
         >
-          Look at my
+          Explore my
         </Typography>
         <Typography
           variant="h2"

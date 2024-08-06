@@ -20,7 +20,7 @@ const App = () => {
   const setTheme = useSetAtom(themeAtom);
 
   useEffect(() => {
-    document.body.style.backgroundColor = theme === "dark" ? "#1c1c1c" : "#fff";
+    document.body.style.backgroundColor = theme === "dark" ? "#1c1c1c" : "#F6F5F2";
   }, [theme]);
 
   useEffect(() => {
@@ -64,12 +64,10 @@ const App = () => {
           ]}
         />
         <Background />
-
         <Header />
         <div className={`main-app ${theme} m-2 md:m-0 overflow-x-hidden`}>
           <div
-            className={`h-full bg-transparent
-            `}
+            className={`h-full bg-transparent`}
           >
             <Intro />
             <About />

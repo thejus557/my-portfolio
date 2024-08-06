@@ -105,8 +105,6 @@ const Intro = () => {
             <Typewriter
               words={[
                 "Frontend Developer",
-                "Backend Developer",
-                "Full Stack Developer",
                 "Open Source Contributor",
               ]}
               loop={5}
