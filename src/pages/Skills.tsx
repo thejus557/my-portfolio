@@ -13,7 +13,7 @@ import ReduxIcon from "../assets/skills/icons8-redux-480.png";
 import TailwindIcon from "../assets/skills/icons8-tailwind-css-480.png";
 import TypeScriptIcon from "../assets/skills/icons8-typescript-480.png";
 import VueJSIcon from "../assets/skills/icons8-vuejs-240.png";
-import RxjsIcon from "../assets/skills/images.jpeg";
+import RxjsIcon from "../assets/skills/rxjs.png";
 import NGRXIcon from "../assets/skills/ngrx.svg";
 import VuexIcon from "../assets/skills/vuex-1.svg";
 import GitIcon from "../assets/skills/icons8-git-480.png";
