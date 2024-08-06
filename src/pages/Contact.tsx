@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import ScrollAnimation from "react-animate-on-scroll";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
@@ -23,9 +23,10 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -40,21 +41,23 @@ const Experience = () => {
           variant="h2"
           sx={{ fontWeight: "bold" }}
           component="div"
-          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+          first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
         >
           Contact Me
         </Typography>
       </ScrollAnimation>
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="flipInX"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
-        <Box
+        <Paper
           sx={{
-            border: "1px solid",
-            borderColor: "text.secondary",
+            // border: "1px solid",
+            // borderColor: "text.secondary",
             borderRadius: "1rem",
             padding: "1rem",
             margin: "0 auto",
@@ -72,12 +75,12 @@ const Experience = () => {
                 <Typography
                   variant="h5"
                   component="div"
-                  className="cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300 text-sm md:text-xl flex justify-center items-center "
+                  className="cursor-pointer hover:text-light-gold dark:hover:text-dark-gold transition-all duration-300 text-sm md:text-xl flex justify-center items-center "
                 >
                   <IoIosMail className="inline-block mr-2" fontSize={24} />
                   suryatejakandukuru8@gmail.com
                 </Typography>
-                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-gold dark:bg-dark-gold"></Box>
               </Box>
             </Typography>
 
@@ -92,12 +95,12 @@ const Experience = () => {
                 <Typography
                   variant="h5"
                   component="div"
-                  className="cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300 text-sm md:text-xl flex justify-center items-center"
+                  className="cursor-pointer hover:text-light-gold dark:hover:text-dark-gold transition-all duration-300 text-sm md:text-xl flex justify-center items-center"
                 >
                   <FaGithub className="inline-block mr-2" fontSize={24} />
                   Github
                 </Typography>
-                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-gold dark:bg-dark-gold"></Box>
               </Box>
             </Typography>
 
@@ -112,16 +115,16 @@ const Experience = () => {
                 <Typography
                   variant="h5"
                   component="div"
-                  className="cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300 text-sm md:text-xl flex justify-center items-center"
+                  className="cursor-pointer hover:text-light-gold dark:hover:text-dark-gold transition-all duration-300 text-sm md:text-xl flex justify-center items-center"
                 >
                   <IoLogoLinkedin className="inline-block mr-2" fontSize={24} />
                   LinkedIn
                 </Typography>
-                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-gold dark:bg-dark-gold"></Box>
               </Box>
             </Typography>
           </Box>
-        </Box>
+        </Paper>
       </ScrollAnimation>
     </Box>
   );

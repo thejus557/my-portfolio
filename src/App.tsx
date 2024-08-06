@@ -5,6 +5,7 @@ import { darkTheme, lightTheme } from "./theme";
 import { useAtomValue } from "jotai";
 import { themeAtom } from "./store";
 import { useSetAtom } from "jotai/react";
+import AnimatedCursor from "react-animated-cursor";
 
 import Intro from "./pages/Intro";
 import About from "./pages/About";
@@ -13,6 +14,7 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
+import Background from "./components/Background";
 const App = () => {
   const theme = useAtomValue(themeAtom);
   const setTheme = useSetAtom(themeAtom);
@@ -31,21 +33,43 @@ const App = () => {
       document.body.style.backgroundColor = "#1c1c1c";
     } else {
       setTheme("light");
-      document.body.style.backgroundColor = "#fff";
+      document.body.style.backgroundColor = "#F6F5F2";
     }
 
-  window.scrollBy(0, 1);
+    window.scrollBy(0, 1);
   }, [setTheme]);
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+        <AnimatedCursor
+          innerSize={0}
+          outerSize={30}
+          color="246, 184, 70"
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5}
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
+        <Background />
+
         <Header />
         <div className={`main-app ${theme} m-2 md:m-0 overflow-x-hidden`}>
           <div
-            className={`h-full ${
-              theme === "dark" ? "dark:bg-[#1c1c1c]" : "bg-white"
-            }`}
+            className={`h-full bg-transparent
+            `}
           >
             <Intro />
             <About />

@@ -36,27 +36,30 @@ const Intro = () => {
       className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         duration={2}
         initiallyVisible={true}
         animatePreScroll={false}
         animateIn="fadeIn"
+        animateOut="fadeOut"
       >
-        <Box className="flex flex-col animate__animated animate__bounce">
+        <Box className="flex flex-col relative">
+          <Box className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full" />
           <img
             src={ProfilePic}
-            className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px]"
+            className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10"
           />
         </Box>
       </ScrollAnimation>
 
       <Box className="flex flex-col text-center">
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
           animateIn="fadeIn"
+          animateOut="fadeOut"
         >
           <Typography
             variant="h6"
@@ -68,11 +71,12 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
           animateIn="fadeIn"
+          animateOut="fadeOut"
         >
           <Typography
             variant="h3"
@@ -84,18 +88,19 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
           animateIn="fadeIn"
+          animateOut="fadeOut"
         >
           <Typography
             variant="h4"
             component="div"
             fontWeight={"bold"}
-            sx={{ color: "text.secondary" }}
-            className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            // sx={{ color: "text.secondary" }}
+            className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-light-gold"
           >
             <Typewriter
               words={[
@@ -114,11 +119,12 @@ const Intro = () => {
           </Typography>
         </ScrollAnimation>
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
           animateIn="fadeIn"
+          animateOut="fadeOut"
         >
           <Box className="flex gap-4 justify-center">
             <Button
@@ -153,11 +159,12 @@ const Intro = () => {
           </Box>
         </ScrollAnimation>
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           duration={2}
           initiallyVisible={true}
           animatePreScroll={false}
           animateIn="fadeIn"
+          animateOut="fadeOut"
         >
           <Box className="flex gap-4 justify-center mt-4">
             <Typography

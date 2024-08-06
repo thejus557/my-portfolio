@@ -1,4 +1,4 @@
-import { Box, Card, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 
 import AngularIcon from "../assets/skills/icons8-angular-480.png";
 import CSSIcon from "../assets/skills/icons8-css-480.png";
@@ -13,7 +13,7 @@ import ReduxIcon from "../assets/skills/icons8-redux-480.png";
 import TailwindIcon from "../assets/skills/icons8-tailwind-css-480.png";
 import TypeScriptIcon from "../assets/skills/icons8-typescript-480.png";
 import VueJSIcon from "../assets/skills/icons8-vuejs-240.png";
-import RxjsIcon from "../assets/skills/images.jpeg";
+import RxjsIcon from "../assets/skills/rxjs.png";
 import NGRXIcon from "../assets/skills/ngrx.svg";
 import VuexIcon from "../assets/skills/vuex-1.svg";
 import GitIcon from "../assets/skills/icons8-git-480.png";
@@ -126,9 +126,10 @@ const Skills = () => {
       className="flex flex-col justify-center items-center mb-4 min-h-[calc(100dvh-120px)]"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -143,7 +144,8 @@ const Skills = () => {
           variant="h2"
           sx={{ fontWeight: "bold" }}
           component="div"
-          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+          first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
         >
           Skills
         </Typography>
@@ -151,33 +153,34 @@ const Skills = () => {
       <Box className="grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 p-4">
         {skillsJson.map((skill) => (
           <ScrollAnimation
-            animateOnce={true}
+            animateOnce={false}
             initiallyVisible={false}
             animateIn="zoomIn"
+             animateOut="fadeOut"
             animatePreScroll={false}
           >
-            <Box
+            <Paper
               sx={{
-                border: "1px solid",
-                borderColor: "text.secondary",
+                // border: "1px solid",
+                // borderColor: "text.secondary",
                 padding: "1rem",
                 borderRadius: "1rem",
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
               }}
-              className="w-[120px] p-4"
+              className="w-[100px] md:w-[120px] p-4"
             >
-              <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
+              <img src={skill.icon} alt={skill.name} className="w-4 h-4 md:w-6 md:h-6" />
               <Typography
                 sx={{
                   color: "text.secondary",
                 }}
-                className="text-base"
+                className="text-xs md:text-base"
               >
                 {skill.name}
               </Typography>
-            </Box>
+            </Paper>
           </ScrollAnimation>
         ))}
       </Box>

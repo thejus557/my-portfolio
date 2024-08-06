@@ -4,7 +4,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import { Box, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const experienceJson = [
@@ -69,9 +69,10 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -86,7 +87,8 @@ const Experience = () => {
           variant="h2"
           sx={{ fontWeight: "bold" }}
           component="div"
-          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+          first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
         >
           Experience
         </Typography>
@@ -107,9 +109,10 @@ const Experience = () => {
         >
           {experienceJson.map((exp) => (
             <ScrollAnimation
-              animateOnce={true}
+              animateOnce={false}
               initiallyVisible={false}
               animateIn="bounceInUp"
+               animateOut="fadeOut"
               animatePreScroll={false}
             >
               <TimelineItem
@@ -126,32 +129,35 @@ const Experience = () => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <ScrollAnimation
-                    animateOnce={true}
+                    animateOnce={false}
                     initiallyVisible={false}
                     animateIn="bounceInUp"
+                     animateOut="fadeOut"
                     animatePreScroll={false}
                   >
                     <Box
                       sx={{
-                        border: "1px solid",
-                        borderColor: "text.secondary",
+                        // border: "1px dashed",
+                        // borderColor: "text.secondary",
                         borderRadius: "1rem",
+                        padding: "1rem",
                       }}
                     >
                       {exp.positions.map((position, posIndex) => (
                         <ScrollAnimation
-                          animateOnce={true}
+                          animateOnce={false}
                           initiallyVisible={false}
                           animateIn="bounceInUp"
+                           animateOut="fadeOut"
                           animatePreScroll={false}
                         >
-                          <Box
+                          <Paper
                             sx={{
-                              borderBottom: "1px dashed",
-                              borderColor: "text.secondary",
-                              ...(posIndex === exp.positions.length - 1 && {
-                                borderBottom: "none",
-                              }),
+                              // borderBottom: "1px dashed",
+                              // borderColor: "text.secondary",
+                              // ...(posIndex === exp.positions.length - 1 && {
+                              //   borderBottom: "none",
+                              // }),
                             }}
                             key={posIndex}
                             className="mb-4 p-4"
@@ -178,7 +184,7 @@ const Experience = () => {
                                 {res}
                               </Typography>
                             ))}
-                          </Box>
+                          </Paper>
                         </ScrollAnimation>
                       ))}
                     </Box>
