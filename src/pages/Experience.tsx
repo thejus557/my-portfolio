@@ -69,7 +69,7 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
-        animateOnce={false}
+        animateOnce={true}
         initiallyVisible={false}
         animateIn="fadeInDown"
          animateOut="fadeOut"
@@ -109,7 +109,7 @@ const Experience = () => {
         >
           {experienceJson.map((exp) => (
             <ScrollAnimation
-              animateOnce={false}
+              animateOnce={true}
               initiallyVisible={false}
               animateIn="bounceInUp"
                animateOut="fadeOut"
@@ -129,7 +129,7 @@ const Experience = () => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <ScrollAnimation
-                    animateOnce={false}
+                    animateOnce={true}
                     initiallyVisible={false}
                     animateIn="bounceInUp"
                      animateOut="fadeOut"
@@ -145,7 +145,7 @@ const Experience = () => {
                     >
                       {exp.positions.map((position, posIndex) => (
                         <ScrollAnimation
-                          animateOnce={false}
+                          animateOnce={true}
                           initiallyVisible={false}
                           animateIn="bounceInUp"
                            animateOut="fadeOut"
