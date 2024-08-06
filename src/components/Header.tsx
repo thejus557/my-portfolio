@@ -34,7 +34,7 @@ const Header = () => {
   };
   return (
     <>
-      <AppBar className="shadow-none bg-none relative">
+      <AppBar className="shadow-none bg-transparent relative">
         <Box className="min-h-[64px] h-[120px] flex justify-between mx-2 md:mx-4 lg:mt-0 lg:justify-evenly items-center shadow-none">
           <ScrollAnimation
             animateOnce={true}

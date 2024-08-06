@@ -13,6 +13,8 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
+import Bg from './assets/bg.svg'
+import Background from "./components/Background";
 const App = () => {
   const theme = useAtomValue(themeAtom);
   const setTheme = useSetAtom(themeAtom);
@@ -34,18 +36,19 @@ const App = () => {
       document.body.style.backgroundColor = "#fff";
     }
 
-  window.scrollBy(0, 1);
+    window.scrollBy(0, 1);
   }, [setTheme]);
 
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+        <Background />
+        
         <Header />
         <div className={`main-app ${theme} m-2 md:m-0 overflow-x-hidden`}>
           <div
-            className={`h-full ${
-              theme === "dark" ? "dark:bg-[#1c1c1c]" : "bg-white"
-            }`}
+            className={`h-full bg-transparent
+            `}
           >
             <Intro />
             <About />
