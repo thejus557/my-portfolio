@@ -14,7 +14,7 @@ export const lightTheme = createTheme({
     },
     background: {
       default: "#f6f6f6", // White background
-      paper: "#f5f5f5", // Light grey for paper components
+      paper: "#f6f6f6", // Light grey for paper components
     },
     text: {
       primary: "#000", // Black text
@@ -26,8 +26,37 @@ export const lightTheme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-            boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
-        border:"1px solid #f6b846d1"
+          boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
+          border:"1px solid #f6b846d1",
+          borderRadius:"1rem"
+          // position: "relative", // Ensure the root is positioned relatively for the pseudo-elements
+          // borderRadius: "1rem", // Adjust the border radius of the Paper component
+          // "&::before, &::after": {
+          //   content: '""',
+          //   position: "absolute",
+          //   border: "1px solid #f6b846d1",
+          //   borderRadius: "1rem", // Adjust the border radius for the pseudo-elements
+          // },
+          // "&::before": {
+          //   top: 0,
+          //   left: 0,
+          //   width: "50px", // Adjust the length of the border
+          //   height: "25px", // Adjust the length of the border
+          //   borderBottom: "none",
+          //   borderRight: "none",
+          //   borderTopLeftRadius: "18rem", // Match the Paper component's border radius
+          //   borderBottomRightRadius: "30rem", // No curvature for the bottom-right corner
+          // },
+          // "&::after": {
+          //   bottom: 0,
+          //   right: 0,
+          //   width: "50px", // Adjust the length of the border
+          //   height: "25px", // Adjust the length of the border
+          //   borderTop: "none",
+          //   borderLeft: "none",
+          //   borderTopRightRadius: "0", // No curvature for the top-left corner
+          //   borderBottomLeftRadius: "0", // Match the Paper component's border radius
+          // },
         },
       },
     },
@@ -76,7 +105,36 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
-        border:"1px solid #f6b846d1"
+          border:"1px solid #f6b846d1",
+          borderRadius:"1rem"
+          // position: "relative", // Ensure the root is positioned relatively for the pseudo-elements
+          // borderRadius: "1rem", // Adjust the border radius of the Paper component
+          // "&::before, &::after": {
+          //   content: '""',
+          //   position: "absolute",
+          //   border: "1px solid #f6b846d1",
+          //   borderRadius: "1rem", // Adjust the border radius for the pseudo-elements
+          // },
+          // "&::before": {
+          //   top: 0,
+          //   left: 0,
+          //   width: "50px", // Adjust the length of the border
+          //   height: "25px", // Adjust the length of the border
+          //   borderBottom: "none",
+          //   borderRight: "none",
+          //   borderTopLeftRadius: "18rem", // Match the Paper component's border radius
+          //   borderBottomRightRadius: "30rem", // No curvature for the bottom-right corner
+          // },
+          // "&::after": {
+          //   bottom: 0,
+          //   right: 0,
+          //   width: "50px", // Adjust the length of the border
+          //   height: "25px", // Adjust the length of the border
+          //   borderTop: "none",
+          //   borderLeft: "none",
+          //   borderTopRightRadius: "0", // No curvature for the top-left corner
+          //   borderBottomLeftRadius: "0", // Match the Paper component's border radius
+          // },
         },
       },
     },

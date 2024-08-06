@@ -195,7 +195,8 @@ svg {
 
 
 .canvas.canvas-cyberlines.light {
-  background-color: #F6F5F2 !important;
+  /* background-color: #F6F5F2 !important; */
+  background-color: #fff;
 }
 
 .canvas.canvas-cyberlines.dark { 

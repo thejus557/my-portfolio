@@ -74,7 +74,7 @@ const About = () => {
                   // border: "1px solid",
                   // borderColor: "text.secondary",
                   width: "245px",
-                  borderRadius: "1rem",
+                 // borderRadius: "1rem",
                   padding: "1rem",
                 }}
               >
@@ -96,7 +96,7 @@ const About = () => {
                   // border: "1px solid",
                   // borderColor: "text.secondary",
                   width: "245px",
-                  borderRadius: "1rem",
+                //  borderRadius: "1rem",
                   padding: "1rem",
                 }}
               >
