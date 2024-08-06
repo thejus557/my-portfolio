@@ -65,11 +65,11 @@ const Sidebar = ({ drawerState, onToggle, navItemsList }: SibebarProps) => {
             <Typography
               variant="h5"
               component="div"
-              className="cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+              className="first-letter:capitalize cursor-pointer hover:text-light-gold dark:hover:text-dark-goldtext-light-gold transition-all duration-300"
             >
               {e}
             </Typography>
-            <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+            <Box className="h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-light-gold dark:bg-dark-gold"></Box>
           </Box>
         ))}
       </Box>

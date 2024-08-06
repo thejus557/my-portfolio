@@ -69,9 +69,10 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -108,9 +109,10 @@ const Experience = () => {
         >
           {experienceJson.map((exp) => (
             <ScrollAnimation
-              animateOnce={true}
+              animateOnce={false}
               initiallyVisible={false}
               animateIn="bounceInUp"
+               animateOut="fadeOut"
               animatePreScroll={false}
             >
               <TimelineItem
@@ -127,9 +129,10 @@ const Experience = () => {
                 </TimelineSeparator>
                 <TimelineContent>
                   <ScrollAnimation
-                    animateOnce={true}
+                    animateOnce={false}
                     initiallyVisible={false}
                     animateIn="bounceInUp"
+                     animateOut="fadeOut"
                     animatePreScroll={false}
                   >
                     <Box
@@ -142,9 +145,10 @@ const Experience = () => {
                     >
                       {exp.positions.map((position, posIndex) => (
                         <ScrollAnimation
-                          animateOnce={true}
+                          animateOnce={false}
                           initiallyVisible={false}
                           animateIn="bounceInUp"
+                           animateOut="fadeOut"
                           animatePreScroll={false}
                         >
                           <Paper

@@ -23,9 +23,10 @@ const Experience = () => {
       className="mb-4 min-h-[calc(100dvh-120px)] flex flex-col justify-center items-center"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -47,9 +48,10 @@ const Experience = () => {
         </Typography>
       </ScrollAnimation>
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="flipInX"
+         animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Paper

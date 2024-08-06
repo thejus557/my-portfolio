@@ -13,9 +13,10 @@ const About = () => {
       className="flex flex-col justify-center items-center py-[44px]"
     >
       <ScrollAnimation
-        animateOnce={true}
+        animateOnce={false}
         initiallyVisible={false}
         animateIn="fadeInDown"
+        animateOut="fadeOut"
         animatePreScroll={false}
       >
         <Typography
@@ -40,9 +41,10 @@ const About = () => {
       </ScrollAnimation>
       <Box className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20 relative">
         <ScrollAnimation
-          animateOnce={true}
+          animateOnce={false}
           initiallyVisible={false}
           animateIn="bounceInLeft"
+           animateOut="fadeOut"
           animatePreScroll={false}
           delay={0.2}
           className="relative"
@@ -59,9 +61,10 @@ const About = () => {
         </ScrollAnimation>
         <Box className="flex flex-col text-center items-center justify-center">
           <ScrollAnimation
-            animateOnce={true}
+            animateOnce={false}
             initiallyVisible={false}
             animateIn="bounceInRight"
+             animateOut="fadeOut"
             animatePreScroll={false}
             delay={0.2}
           >
@@ -113,9 +116,10 @@ const About = () => {
           </ScrollAnimation>
           <Box className="flex text-center">
             <ScrollAnimation
-              animateOnce={true}
+              animateOnce={false}
               initiallyVisible={false}
               animateIn="bounceInRight"
+               animateOut="fadeOut"
               animatePreScroll={false}
               delay={0.2}
             >
