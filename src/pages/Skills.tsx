@@ -156,10 +156,10 @@ const Skills = () => {
             animateIn="zoomIn"
             animatePreScroll={false}
           >
-            <Box
+            <Paper
               sx={{
-                border: "1px solid",
-                borderColor: "text.secondary",
+                // border: "1px solid",
+                // borderColor: "text.secondary",
                 padding: "1rem",
                 borderRadius: "1rem",
                 display: "flex",
@@ -177,7 +177,7 @@ const Skills = () => {
               >
                 {skill.name}
               </Typography>
-            </Box>
+            </Paper>
           </ScrollAnimation>
         ))}
       </Box>

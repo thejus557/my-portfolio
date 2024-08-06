@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import ScrollAnimation from "react-animate-on-scroll";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
@@ -51,10 +51,10 @@ const Experience = () => {
         animateIn="flipInX"
         animatePreScroll={false}
       >
-        <Box
+        <Paper
           sx={{
-            border: "1px solid",
-            borderColor: "text.secondary",
+            // border: "1px solid",
+            // borderColor: "text.secondary",
             borderRadius: "1rem",
             padding: "1rem",
             margin: "0 auto",
@@ -121,7 +121,7 @@ const Experience = () => {
               </Box>
             </Typography>
           </Box>
-        </Box>
+        </Paper>
       </ScrollAnimation>
     </Box>
   );

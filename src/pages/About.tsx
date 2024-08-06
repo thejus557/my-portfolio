@@ -1,4 +1,4 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Paper, Typography } from "@mui/material";
 
 import ProfilePic from "../assets/profile-pic-2.png";
 
@@ -59,10 +59,10 @@ const About = () => {
             delay={0.2}
           >
             <Box className="flex text-center justify-between flex-col md:flex-row lg:flex-row gap-5 p-4">
-              <Box
+              <Paper
                 sx={{
-                  border: "1px solid",
-                  borderColor: "text.secondary",
+                  // border: "1px solid",
+                  // borderColor: "text.secondary",
                   width: "245px",
                   borderRadius: "1rem",
                   padding: "1rem",
@@ -79,12 +79,12 @@ const About = () => {
                 <Typography sx={{ color: "text.secondary" }}>
                   Frontend Development
                 </Typography>
-              </Box>
+              </Paper>
 
-              <Box
+              <Paper
                 sx={{
-                  border: "1px solid",
-                  borderColor: "text.secondary",
+                  // border: "1px solid",
+                  // borderColor: "text.secondary",
                   width: "245px",
                   borderRadius: "1rem",
                   padding: "1rem",
@@ -101,7 +101,7 @@ const About = () => {
                 <Typography sx={{ color: "text.secondary" }}>
                   Computer Science & Engineering
                 </Typography>
-              </Box>
+              </Paper>
             </Box>
           </ScrollAnimation>
           <Box className="flex text-center">
@@ -112,31 +112,31 @@ const About = () => {
               animatePreScroll={false}
               delay={0.2}
             >
-              <Box
+              <Paper
                 sx={{
                   maxWidth: "580px",
                   textAlign: "left",
                 }}
                 className="mx-4 md:mx-0"
               >
-                <Typography sx={{ color: "text.secondary", marginY: "1rem" }}>
+                <Typography sx={{ color: "text.secondary", padding: '1rem' }}>
                   Well, I'm a Frontend Developer passionate about creating
                   top-tier user interfaces. With extensive experience in UI
                   development and a keen eye for detail, I've made significant
                   contributions to various projects and organizations.
                 </Typography>
-                <Typography sx={{ color: "text.secondary", marginY: "1rem" }}>
+                <Typography sx={{ color: "text.secondary", padding: '1rem' }}>
                   Currently, I'm a Senior UI Developer at Techolution, where
                   I've led UI modernization projects. I excel in creating
                   pixel-perfect, responsive, and accessible UIs that delight
                   users and meet business goals.
                 </Typography>
-                <Typography sx={{ color: "text.secondary", marginY: "1rem" }}>
+                <Typography sx={{ color: "text.secondary", padding: '1rem' }}>
                   I'm always eager to learn and grow, and I'm excited about the
                   opportunity to work on innovative projects that push the
                   boundaries of what's possible.
                 </Typography>
-              </Box>
+              </Paper>
             </ScrollAnimation>
           </Box>
         </Box>

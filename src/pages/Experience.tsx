@@ -4,7 +4,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import { Box, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const experienceJson = [
@@ -133,9 +133,10 @@ const Experience = () => {
                   >
                     <Box
                       sx={{
-                        border: "1px solid",
+                        border: "1px dashed",
                         borderColor: "text.secondary",
                         borderRadius: "1rem",
+                        padding: "1rem",
                       }}
                     >
                       {exp.positions.map((position, posIndex) => (
@@ -145,13 +146,13 @@ const Experience = () => {
                           animateIn="bounceInUp"
                           animatePreScroll={false}
                         >
-                          <Box
+                          <Paper
                             sx={{
-                              borderBottom: "1px dashed",
-                              borderColor: "text.secondary",
-                              ...(posIndex === exp.positions.length - 1 && {
-                                borderBottom: "none",
-                              }),
+                              // borderBottom: "1px dashed",
+                              // borderColor: "text.secondary",
+                              // ...(posIndex === exp.positions.length - 1 && {
+                              //   borderBottom: "none",
+                              // }),
                             }}
                             key={posIndex}
                             className="mb-4 p-4"
@@ -178,7 +179,7 @@ const Experience = () => {
                                 {res}
                               </Typography>
                             ))}
-                          </Box>
+                          </Paper>
                         </ScrollAnimation>
                       ))}
                     </Box>
