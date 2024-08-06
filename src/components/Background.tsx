@@ -29,7 +29,7 @@ const Background = () => {
     const animateScroll = (elements: NodeListOf<Element>) => {
       elements.forEach((element) => {
         // Generate random speed for the y direction
-        const speedY = (Math.random() * 10) + 1; // Random speed between 1 and 10
+        const speedY = (Math.random() * 2) + 1; // Random speed between 1 and 10
   
         // Randomly determine the direction (1 for top-to-bottom, -1 for bottom-to-top)
         const direction = Math.random() > 0.5 ? 1 : -1;
