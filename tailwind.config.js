@@ -30,6 +30,10 @@ export default {
           gold: "#f6b846",
         },
       },
+      gradientColorStops: {
+        'gold-40': 'rgba(246, 184, 70, 0.7)',
+        'gold-1': 'rgba(246, 184, 70, 0.4)',
+      },
     },
   },
   plugins: [],

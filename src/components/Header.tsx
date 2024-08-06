@@ -47,7 +47,8 @@ const Header = () => {
               <Typography
                 component="div"
                 sx={{ flexGrow: 1 }}
-                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+                className="text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+              first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
               >
                 {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}
               </Typography>
@@ -75,11 +76,11 @@ const Header = () => {
                     <Typography
                       variant="h5"
                       component="div"
-                      className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-textSecondary dark:hover:text-dark-textSecondary transition-all duration-300"
+                      className="first-letter:capitalize hidden lg:flex cursor-pointer hover:text-light-gold dark:hover:text-dark-goldtext-light-gold transition-all duration-300"
                     >
                       {e}
                     </Typography>
-                    <Box className="h-[2px] hidden lg:block w-0 group-hover:w-full transition-all duration-300 bg-light-textSecondary dark:bg-dark-textSecondary"></Box>
+                    <Box className="h-[2px] hidden lg:block w-0 group-hover:w-full transition-all duration-300 bg-light-gold dark:bg-dark-gold"></Box>
                   </Box>
                 </>
               ))}

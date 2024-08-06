@@ -42,10 +42,11 @@ const Intro = () => {
         animatePreScroll={false}
         animateIn="fadeIn"
       >
-        <Box className="flex flex-col animate__animated animate__bounce">
+        <Box className="flex flex-col relative">
+          <Box className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full" />
           <img
             src={ProfilePic}
-            className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px]"
+            className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10"
           />
         </Box>
       </ScrollAnimation>

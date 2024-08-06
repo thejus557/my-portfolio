@@ -26,8 +26,8 @@ export const lightTheme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-         boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
-         border:"1px solid #f6b846d1"
+            boxShadow: "0px 0px 10px 0px #f6b84699", // Add a light shadow to Paper components,
+        border:"1px solid #f6b846d1"
         },
       },
     },

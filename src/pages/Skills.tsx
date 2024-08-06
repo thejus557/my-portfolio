@@ -143,7 +143,8 @@ const Skills = () => {
           variant="h2"
           sx={{ fontWeight: "bold" }}
           component="div"
-          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+          first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
         >
           Skills
         </Typography>
@@ -166,14 +167,14 @@ const Skills = () => {
                 alignItems: "center",
                 gap: "8px",
               }}
-              className="w-[120px] p-4"
+              className="w-[100px] md:w-[120px] p-4"
             >
-              <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
+              <img src={skill.icon} alt={skill.name} className="w-4 h-4 md:w-6 md:h-6" />
               <Typography
                 sx={{
                   color: "text.secondary",
                 }}
-                className="text-base"
+                className="text-xs md:text-base"
               >
                 {skill.name}
               </Typography>

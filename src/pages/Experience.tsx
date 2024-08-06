@@ -86,7 +86,8 @@ const Experience = () => {
           variant="h2"
           sx={{ fontWeight: "bold" }}
           component="div"
-          className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl"
+            className="text-center mb-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl first-letter:text-dark-gold first-letter:italic 
+          first-letter:text-2xl first-letter:md:text-3xl first-letter:lg:text-4xl first-letter:xl:text-5xl"
         >
           Experience
         </Typography>
@@ -133,8 +134,8 @@ const Experience = () => {
                   >
                     <Box
                       sx={{
-                        border: "1px dashed",
-                        borderColor: "text.secondary",
+                        // border: "1px dashed",
+                        // borderColor: "text.secondary",
                         borderRadius: "1rem",
                         padding: "1rem",
                       }}
