@@ -162,7 +162,9 @@ const Experience = () => {
                             key={posIndex}
                             className="mb-4 p-4"
                           >
-                            <Typography variant="subtitle1" component="div">
+                            <Typography variant="subtitle1" component="div" sx={{ 
+                              color: "text.primary",
+                             }}>
                               {position.title} . {exp.company}
                             </Typography>
                             <Typography

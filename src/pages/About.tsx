@@ -5,8 +5,11 @@ import ProfilePic from "../assets/profile-pic-2.png";
 import { FaAward } from "react-icons/fa6";
 import { FaUserGraduate } from "react-icons/fa";
 import ScrollAnimation from "react-animate-on-scroll";
+import { useAtomValue } from "jotai";
+import { themeAtom } from "../store";
 
 const About = () => {
+  const theme = useAtomValue(themeAtom);
   return (
     <Box
       id="about"
@@ -55,7 +58,7 @@ const About = () => {
 
             <img
               src={ProfilePic}
-              className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10 rounded-[20%]"
+              className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10 rounded-[20%] border-2 border-solid ${theme === 'light' ? 'border-black' : 'border-white'}`}
             />
           </Box>
         </ScrollAnimation>

@@ -6,8 +6,12 @@ import ProfilePic from "../assets/profile-pic 8.png";
 import { Typewriter } from "react-simple-typewriter";
 import Resume from "../assets/Surya_Resume.pdf";
 import ScrollAnimation from "react-animate-on-scroll";
+import { useAtomValue } from "jotai";
+import { themeAtom } from "../store";
 
 const Intro = () => {
+  const theme = useAtomValue(themeAtom);
+  console.log(theme);
   const handleGithubClick = () => {
     window.open("https://github.com/thejus557");
   };
@@ -44,11 +48,11 @@ const Intro = () => {
         animateOut="fadeOut"
       >
         <Box className="flex flex-col relative">
-          <Box className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full" />
+          <Box className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full border`}/>
           <img
             src={ProfilePic}
-            className="w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10"
-          />
+            className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10 border-2 border-solid rounded-full ${theme === 'light' ? 'border-black' : 'border-white'}`}
+          />          
         </Box>
       </ScrollAnimation>
 
