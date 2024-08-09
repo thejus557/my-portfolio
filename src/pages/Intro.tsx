@@ -1,193 +1,195 @@
 import { Box, Button, Typography } from "@mui/material";
-import { USER_DETAILS } from "../json";
+import { useAtomValue } from "jotai";
+import ScrollAnimation from "react-animate-on-scroll";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import ProfilePic from "../assets/profile-pic 8.png";
 import { Typewriter } from "react-simple-typewriter";
 import Resume from "../assets/Surya_Resume.pdf";
-import ScrollAnimation from "react-animate-on-scroll";
-import { useAtomValue } from "jotai";
+import ProfilePic from "../assets/profile-pic 8.png";
+import { USER_DETAILS } from "../json";
 import { themeAtom } from "../store";
 
 const Intro = () => {
-  const theme = useAtomValue(themeAtom);
-  console.log(theme);
-  const handleGithubClick = () => {
-    window.open("https://github.com/thejus557");
-  };
+	const theme = useAtomValue(themeAtom);
+	console.log(theme);
+	const handleGithubClick = () => {
+		window.open("https://github.com/thejus557");
+	};
 
-  const handleLinkedInClick = () => {
-    window.open("https://in.linkedin.com/in/suryateja-k-1825b8151");
-  };
+	const handleLinkedInClick = () => {
+		window.open("https://in.linkedin.com/in/suryateja-k-1825b8151");
+	};
 
-  const handleItemClick = (e: string) => {
-    const element = document.getElementById(e.toLowerCase());
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+	const handleItemClick = (e: string) => {
+		const element = document.getElementById(e.toLowerCase());
+		if (element) {
+			element.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+		}
+	};
 
-  const handleDownloadResume = () => {
-    window.open(Resume, "_blank", "noopener,noreferrer");
-  };
+	const handleDownloadResume = () => {
+		window.open(Resume, "_blank", "noopener,noreferrer");
+	};
 
-  return (
-    <Box
-      id="intro"
-      className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]"
-    >
-      <ScrollAnimation
-        animateOnce={true}
-        duration={2}
-        initiallyVisible={true}
-        animatePreScroll={false}
-        animateIn="fadeIn"
-        animateOut="fadeOut"
-      >
-        <Box className="flex flex-col relative">
-          <Box className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full border`}/>
-          <img
-            src={ProfilePic}
-            className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10 border-2 border-solid rounded-full ${theme === 'light' ? 'border-black' : 'border-white'}`}
-          />          
-        </Box>
-      </ScrollAnimation>
+	return (
+		<Box
+			id="intro"
+			className="flex flex-col justify-center items-center lg:flex-row gap:10 lg:gap-20  min-h-[calc(100dvh-120px)]"
+		>
+			<ScrollAnimation
+				animateOnce={true}
+				duration={2}
+				initiallyVisible={true}
+				animatePreScroll={false}
+				animateIn="fadeIn"
+				animateOut="fadeOut"
+			>
+				<Box className="flex flex-col relative">
+					{/* <Box
+						className={
+							"w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] absolute bg-gradient-to-br from-gold-40 to-gold-1 z-0 right-[6%] top-[6%] rounded-full border"
+						}
+					/> */}
+					<img
+						alt="profile-pic"
+						src={ProfilePic}
+						className={`w-[140px] h-[140px] md:w-[200px] md:h-[200px] lg:w-[320px] lg:h-[320px] xl:w-[420px] xl:h-[420px] relative z-10 border-2 border-solid rounded-full  ${theme === "light" ? "border-black shadow-light" : "border-white shadow-dark"} `}
+					/>
+				</Box>
+			</ScrollAnimation>
 
-      <Box className="flex flex-col text-center">
-        <ScrollAnimation
-          animateOnce={true}
-          duration={2}
-          initiallyVisible={true}
-          animatePreScroll={false}
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-        >
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ color: "text.secondary" }}
-            className="mt-4"
-          >
-            Hello, I'm
-          </Typography>
-        </ScrollAnimation>
-        <ScrollAnimation
-          animateOnce={true}
-          duration={2}
-          initiallyVisible={true}
-          animatePreScroll={false}
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-        >
-          <Typography
-            variant="h3"
-            component="div"
-            className="my-4 text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
-          >
-            {USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}{" "}
-            {USER_DETAILS.NAME.LAST_NAME}
-          </Typography>
-        </ScrollAnimation>
-        <ScrollAnimation
-          animateOnce={true}
-          duration={2}
-          initiallyVisible={true}
-          animatePreScroll={false}
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-        >
-          <Typography
-            variant="h4"
-            component="div"
-            fontWeight={"bold"}
-            // sx={{ color: "text.secondary" }}
-            className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-light-gold"
-          >
-            <Typewriter
-              words={[
-                "Frontend Developer",
-                "Open Source Contributor",
-              ]}
-              loop={5}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </Typography>
-        </ScrollAnimation>
-        <ScrollAnimation
-          animateOnce={true}
-          duration={2}
-          initiallyVisible={true}
-          animatePreScroll={false}
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-        >
-          <Box className="flex gap-4 justify-center">
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "2rem",
-                padding: "0.5rem",
-                textTransform: "none",
-              }}
-              onClick={() => handleDownloadResume()}
-            >
-              Download CV
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "2rem",
-                padding: "0.5rem",
-                textTransform: "none",
-                backgroundColor: "primary.main",
-                color: "secondary.main",
-                ":hover": {
-                  color: "text.secondary",
-                },
-              }}
-              onClick={() => {
-                handleItemClick("contact");
-              }}
-            >
-              Contact Info
-            </Button>
-          </Box>
-        </ScrollAnimation>
-        <ScrollAnimation
-          animateOnce={true}
-          duration={2}
-          initiallyVisible={true}
-          animatePreScroll={false}
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-        >
-          <Box className="flex gap-4 justify-center mt-4">
-            <Typography
-              variant="h5"
-              component="div"
-              onClick={handleGithubClick}
-            >
-              <FaGithub fontSize={"24"} />
-            </Typography>
-            <Typography
-              variant="h5"
-              component="div"
-              onClick={handleLinkedInClick}
-            >
-              <FaLinkedin fontSize={"24"} />
-            </Typography>
-          </Box>
-        </ScrollAnimation>
-      </Box>
-    </Box>
-  );
+			<Box className="flex flex-col text-center">
+				<ScrollAnimation
+					animateOnce={true}
+					duration={2}
+					initiallyVisible={true}
+					animatePreScroll={false}
+					animateIn="fadeIn"
+					animateOut="fadeOut"
+				>
+					<Typography
+						variant="h6"
+						component="div"
+						sx={{ color: "text.secondary" }}
+						className="mt-4"
+					>
+						Hello, I'm
+					</Typography>
+				</ScrollAnimation>
+				<ScrollAnimation
+					animateOnce={true}
+					duration={2}
+					initiallyVisible={true}
+					animatePreScroll={false}
+					animateIn="fadeIn"
+					animateOut="fadeOut"
+				>
+					<Typography
+						variant="h3"
+						component="div"
+						className="my-4 text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+					>
+						{USER_DETAILS.NAME.FIRST_NAME} {USER_DETAILS.NAME.MIDDLE_NAME}{" "}
+						{USER_DETAILS.NAME.LAST_NAME}
+					</Typography>
+				</ScrollAnimation>
+				<ScrollAnimation
+					animateOnce={true}
+					duration={2}
+					initiallyVisible={true}
+					animatePreScroll={false}
+					animateIn="fadeIn"
+					animateOut="fadeOut"
+				>
+					<Typography
+						variant="h4"
+						component="div"
+						fontWeight={"bold"}
+						// sx={{ color: "text.secondary" }}
+						className="mb-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-light-gold"
+					>
+						<Typewriter
+							words={["Frontend Developer", "Open Source Contributor"]}
+							loop={5}
+							cursor
+							cursorStyle="_"
+							typeSpeed={70}
+							deleteSpeed={50}
+							delaySpeed={1000}
+						/>
+					</Typography>
+				</ScrollAnimation>
+				<ScrollAnimation
+					animateOnce={true}
+					duration={2}
+					initiallyVisible={true}
+					animatePreScroll={false}
+					animateIn="fadeIn"
+					animateOut="fadeOut"
+				>
+					<Box className="flex gap-4 justify-center">
+						<Button
+							variant="outlined"
+							sx={{
+								borderRadius: "2rem",
+								padding: "0.5rem",
+								textTransform: "none",
+							}}
+							onClick={() => handleDownloadResume()}
+						>
+							Download CV
+						</Button>
+						<Button
+							variant="outlined"
+							sx={{
+								borderRadius: "2rem",
+								padding: "0.5rem",
+								textTransform: "none",
+								backgroundColor: "primary.main",
+								color: "secondary.main",
+								":hover": {
+									color: "text.secondary",
+								},
+							}}
+							onClick={() => {
+								handleItemClick("contact");
+							}}
+						>
+							Contact Info
+						</Button>
+					</Box>
+				</ScrollAnimation>
+				<ScrollAnimation
+					animateOnce={true}
+					duration={2}
+					initiallyVisible={true}
+					animatePreScroll={false}
+					animateIn="fadeIn"
+					animateOut="fadeOut"
+				>
+					<Box className="flex gap-4 justify-center mt-4">
+						<Typography
+							variant="h5"
+							component="div"
+							onClick={handleGithubClick}
+						>
+							<FaGithub fontSize={"24"} />
+						</Typography>
+						<Typography
+							variant="h5"
+							component="div"
+							onClick={handleLinkedInClick}
+						>
+							<FaLinkedin fontSize={"24"} />
+						</Typography>
+					</Box>
+				</ScrollAnimation>
+			</Box>
+		</Box>
+	);
 };
 
 export default Intro;

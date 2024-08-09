@@ -164,13 +164,16 @@ svg {
 }
 
 .canvas-cyberlines .lines {
+  opacity: .1
+}
+
+.canvas-cyberlines.dark .lines {
   opacity: .05
 }
 
 .canvas-cyberlines .line {
   fill-rule: evenodd;
   clip-rule: evenodd;
-  fill: #7a6bb5
 }
 
 .canvas-cyberlines .lights {
@@ -180,12 +183,8 @@ svg {
 .canvas-cyberlines .light {
   fill-rule: evenodd;
   clip-rule: evenodd;
-  fill: #7a6bb5
 }
 
-.canvas.canvas-spiral {
-  background: #000
-}
 
 .canvas.canvas-matrix canvas {
   width: 100%;
